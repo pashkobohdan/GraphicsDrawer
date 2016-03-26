@@ -2,18 +2,17 @@ package controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Point2D;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import library.function.LagrangePolynomialFunction;
+import library.function.LagrangePolynomialScriptFunction;
 import library.function.PolynomialFunction;
-import library.function.RunnableDoubleFunction;
 import library.function.StringFunction;
 import library.graphic.CanvasGraphic;
-import library.solver.EqualTwoFunction;
 
 import java.net.URL;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class GraphicController implements Initializable {
@@ -34,11 +33,36 @@ public class GraphicController implements Initializable {
         StringFunction stringFunction = new StringFunction("x*sin(x)/5");
         stringFunction.initialize();
 
-        PolynomialFunction polynomialFunction = new PolynomialFunction(1,0,0);
+        PolynomialFunction polynomialFunction = new PolynomialFunction(1, 0, 0);
         polynomialFunction.initialize();
 
-        PolynomialFunction polynomialFunction1 = new PolynomialFunction(-1,-2,3);
-        polynomialFunction.initialize();
+        PolynomialFunction polynomialFunction1 = new PolynomialFunction(-1, -2, 3);
+        polynomialFunction1.initialize();
+
+
+
+        LagrangePolynomialFunction lagrangePolynomialFunction = new LagrangePolynomialFunction(
+                new Point2D(0, -2),
+                new Point2D(1, -5),
+                new Point2D(2, 0),
+                new Point2D(3, -4)
+//                new Point2D(0,0),
+//                new Point2D(1.57,1),
+//                new Point2D(3.14,0),
+//                new Point2D(6.28,0),
+//                new Point2D(-3.14,0)
+
+        );
+        lagrangePolynomialFunction.initialize();
+
+
+        CanvasGraphic canvasGraphic = new CanvasGraphic(canvas, anchorPaneWithCanvas, stringFunction); // , polynomialFunction, polynomialFunction1,lagrangePolynomialFunction
+        canvasGraphic.setClearBeforeDrawing(true);
+        canvasGraphic.setDrawCoordinateGrid(true);
+        canvasGraphic.setDrawCurrentPositionDots(true);
+        canvasGraphic.initialize();
+
+
 
 //        List<RunnableDoubleFunction> list = new LinkedList<RunnableDoubleFunction>();
 //        list.add(stringFunction);
@@ -49,13 +73,5 @@ public class GraphicController implements Initializable {
 //            System.out.print(arg+" | ");
 //        }
 //        System.out.println();
-
-
-        CanvasGraphic canvasGraphic = new CanvasGraphic(canvas, anchorPaneWithCanvas,stringFunction,polynomialFunction,polynomialFunction1);
-        canvasGraphic.setClearBeforeDrawing(true);
-        canvasGraphic.setDrawCoordinateGrid(true);
-        canvasGraphic.setDrawCurrentPositionDots(true);
-        canvasGraphic.initialize();
-
     }
 }

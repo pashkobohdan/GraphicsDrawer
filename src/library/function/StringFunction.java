@@ -13,16 +13,12 @@ public class StringFunction implements RunnableDoubleFunction {
     private ScriptEngine scriptEngine;
     private Invocable invocable;
 
-    public StringFunction() {
-        initializeEngine();
-    }
+    public StringFunction() { }
 
     public StringFunction(String equationString) {
         this.equationString = equationString;
         equationString = convertFunction(equationString);
         functionString = "function funcJS(x) {return " + equationString + ";}";
-
-        initializeEngine();
     }
 
     private void initializeEngine() {
@@ -31,7 +27,6 @@ public class StringFunction implements RunnableDoubleFunction {
     }
 
     private String convertFunction(String function) {
-
         String result = (" " + function)
                 .toLowerCase()
                 .replaceAll("\\+", " \\+  ")
@@ -65,8 +60,6 @@ public class StringFunction implements RunnableDoubleFunction {
         while (result.contains("^")) {
             result = searchPow(result);
         }
-
-        System.out.println(equationString + "=>" + result);
 
         return result;
     }
@@ -157,7 +150,6 @@ public class StringFunction implements RunnableDoubleFunction {
         return result;
     }
 
-
     @Override
     public Double functionRun(double arg) {
         try {
@@ -171,9 +163,11 @@ public class StringFunction implements RunnableDoubleFunction {
 
     @Override
     public boolean initialize() {
-        if (equationString == null) {
+        if (equationString == null || equationString.length() == 0) {
             return false;
         }
+
+        initializeEngine();
 
         try {
             scriptEngine.eval(functionString);
