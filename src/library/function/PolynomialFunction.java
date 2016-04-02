@@ -30,7 +30,6 @@ public class PolynomialFunction implements RunnableDoubleFunction {
         for (int index = 0; index < coefficients.size(); index++) {
             result += coefficients.get(index) * Math.pow(arg, coefficients.size() - index - 1);
         }
-        result += coefficients.get(coefficients.size() - 1);
 
         return result;
     }
@@ -41,6 +40,11 @@ public class PolynomialFunction implements RunnableDoubleFunction {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public String toString(){
+        return coefficients.toString();
     }
 
     public List<Double> getCoefficients() {

@@ -1,5 +1,7 @@
 package library.function;
 
+import javafx.geometry.Point2D;
+
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
@@ -13,7 +15,8 @@ public class StringFunction implements RunnableDoubleFunction {
     private ScriptEngine scriptEngine;
     private Invocable invocable;
 
-    public StringFunction() { }
+    public StringFunction() {
+    }
 
     public StringFunction(String equationString) {
         this.equationString = equationString;
@@ -154,9 +157,7 @@ public class StringFunction implements RunnableDoubleFunction {
     public Double functionRun(double arg) {
         try {
             return (double) invocable.invokeFunction("funcJS", arg);
-        } catch (NoSuchMethodException e) {
-            return null;
-        } catch (ScriptException e) {
+        } catch (Exception e) {
             return null;
         }
     }
@@ -176,5 +177,10 @@ public class StringFunction implements RunnableDoubleFunction {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return functionString;
     }
 }

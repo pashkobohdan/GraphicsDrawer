@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ChoiceFunctionSetController">
+   <children>
+      <AnchorPane prefWidth="200.0">
+         <children>
+            <Label fx:id="labelTitle" alignment="CENTER" layoutX="106.0" layoutY="33.0" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="30.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="buttonSetString" layoutX="97.0" layoutY="4.0" mnemonicParsing="false" onAction="#action_buttonSetString" text="string" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </AnchorPane>
+      <AnchorPane prefHeight="30.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="buttonSetPolynomial" layoutX="94.0" layoutY="4.0" mnemonicParsing="false" onAction="#action_buttonSetPolynomial" text="polynomial" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </AnchorPane>
+      <AnchorPane prefHeight="30.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="buttonSetLagrangePolynomial" layoutX="94.0" layoutY="4.0" mnemonicParsing="false" onAction="#action_buttonSetLagrangePolynomial" text="lagrange polynomial" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="buttonOk" defaultButton="true" layoutX="238.0" layoutY="174.0" mnemonicParsing="false" onAction="#action_buttonOk" text="ok" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="0.0" />
+            <Button fx:id="buttonCancel" cancelButton="true" layoutY="174.0" mnemonicParsing="false" onAction="#action_buttonCancel" text="cancel" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="130.0" />
+            <Label fx:id="labelStatus" alignment="CENTER" layoutX="101.0" layoutY="6.0" text="status" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </AnchorPane>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</VBox>

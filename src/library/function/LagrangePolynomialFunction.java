@@ -70,4 +70,13 @@ public class LagrangePolynomialFunction implements RunnableDoubleFunction {
 
         return result;
     }
+
+    @Override
+    public String toString() {
+        String result = "";
+        for (Point2D point2D : dots) {
+            result += "x:" + point2D.getX() + "  y:" + point2D.getY();
+        }
+        return result;
+    }
 }

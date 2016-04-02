@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LagrangePolynomialFunctionController">
+    <children>
+      <AnchorPane prefHeight="200.0" prefWidth="290.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TableView fx:id="tableDots" layoutX="38.0" layoutY="29.0" prefHeight="200.0" prefWidth="290.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columns>
+                <TableColumn fx:id="columnX" maxWidth="147.0" minWidth="0.0" prefWidth="147.0" resizable="false" text="X" />
+                <TableColumn fx:id="columnY" maxWidth="150.0" minWidth="0.0" prefWidth="150.0" resizable="false" text="Y" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="30.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="buttonAdd" layoutX="224.0" layoutY="2.0" mnemonicParsing="false" onAction="#action_buttonAdd" prefWidth="80.0" text="add" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <Button fx:id="buttonRemove" layoutX="119.0" layoutY="4.0" mnemonicParsing="false" onAction="#action_buttonRemove" prefWidth="80.0" text="remove" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="105.0" />
+            <Button fx:id="buttonClear" layoutX="14.0" layoutY="3.0" mnemonicParsing="false" onAction="#action_buttonClear" prefWidth="80.0" text="clear" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="30.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="labelStatus" alignment="CENTER" layoutX="117.0" layoutY="6.0" text="status" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+        <AnchorPane prefHeight="30.0" prefWidth="490.0">
+            <children>
+                <Button fx:id="buttonOk" defaultButton="true" layoutX="447.0" layoutY="2.0" mnemonicParsing="false" onAction="#action_buttonOk" prefWidth="70.0" text="ok" AnchorPane.rightAnchor="0.0" />
+                <Button fx:id="buttonCancel" cancelButton="true" layoutX="397.0" layoutY="2.0" mnemonicParsing="false" onAction="#action_buttonCancel" prefWidth="70.0" text="cancel" AnchorPane.rightAnchor="80.0" />
+                <Button fx:id="buttonTest" layoutX="297.0" layoutY="2.0" mnemonicParsing="false" onAction="#action_buttonTest" prefWidth="80.0" text="test" AnchorPane.leftAnchor="0.0" />
+            </children>
+            <VBox.margin>
+                <Insets top="5.0" />
+            </VBox.margin>
+        </AnchorPane>
+    </children>
+    <padding>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+    </padding>
+</VBox>
