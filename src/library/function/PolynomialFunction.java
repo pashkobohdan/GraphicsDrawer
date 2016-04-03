@@ -1,10 +1,13 @@
 package library.function;
 
+import library.function.settings.FunctionSettings;
+
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
 public class PolynomialFunction implements RunnableDoubleFunction {
+    private FunctionSettings functionSettings = new FunctionSettings();
 
     private List<Double> coefficients;
 
@@ -40,6 +43,16 @@ public class PolynomialFunction implements RunnableDoubleFunction {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public FunctionSettings getFunctionSettings() {
+        return functionSettings;
+    }
+
+    @Override
+    public void setFunctionSettings(FunctionSettings functionSettings) {
+        this.functionSettings = functionSettings;
     }
 
     @Override

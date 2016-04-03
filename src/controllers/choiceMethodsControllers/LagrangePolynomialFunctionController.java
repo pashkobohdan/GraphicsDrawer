@@ -1,4 +1,4 @@
-package controllers;
+package controllers.choiceMethodsControllers;
 
 import com.sun.javafx.scene.control.skin.TableViewSkin;
 import com.sun.javafx.scene.control.skin.VirtualFlow;

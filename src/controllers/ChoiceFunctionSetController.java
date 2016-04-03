@@ -1,19 +1,25 @@
 package controllers;
 
+import controllers.choiceMethodsControllers.LagrangePolynomialFunctionController;
+import controllers.choiceMethodsControllers.PolynomialFunctionController;
+import controllers.choiceMethodsControllers.StringFunctionController;
+import controllers.settings.GraphicSettingsController;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 import library.function.RunnableDoubleFunction;
+import library.function.settings.FunctionSettings;
+import library.util.FXHelper;
 
 import java.io.IOException;
 import java.net.URL;
@@ -24,10 +30,14 @@ import java.util.ResourceBundle;
  */
 public class ChoiceFunctionSetController implements Initializable {
     @FXML
-    public Label labelTitle, labelStatus;
+    public Label labelTitle, labelStatus, labelColor;
+
+    @FXML
+    public ComboBox comboBoxColor;
 
     @FXML
     private Button buttonSetString, buttonSetPolynomial, buttonSetLagrangePolynomial, buttonOk, buttonCancel;
+
 
     private RunnableDoubleFunction runnableDoubleFunction;
     private ResourceBundle resourceBundle;
@@ -52,24 +62,29 @@ public class ChoiceFunctionSetController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         resourceBundle = resources;
         initializeWindows();
+
+        labelColor.setText(resources.getString("function.color"));
+        comboBoxColor.setItems(GraphicSettingsController.colors);
+        GraphicSettingsController.setCurrentColor(Color.web(GraphicSettingsController.colors.get(0)), comboBoxColor, GraphicSettingsController.colors);
+
     }
 
     private boolean initializeWindows() {
         try {
             fxmlLoaderString = new FXMLLoader();
-            fxmlLoaderString.setLocation(getClass().getResource("../fxml/stringFunctionSet.fxml"));
+            fxmlLoaderString.setLocation(getClass().getResource("../fxml/choiceMethods/stringFunctionSet.fxml"));
             fxmlLoaderString.setResources(resourceBundle);
             parentString = fxmlLoaderString.load();
             stringFunctionController = fxmlLoaderString.getController();
 
             fxmlLoaderPolynomial = new FXMLLoader();
-            fxmlLoaderPolynomial.setLocation(getClass().getResource("../fxml/polynomialFunctionSet.fxml"));
+            fxmlLoaderPolynomial.setLocation(getClass().getResource("../fxml/choiceMethods/polynomialFunctionSet.fxml"));
             fxmlLoaderPolynomial.setResources(resourceBundle);
             parentPolynomial = fxmlLoaderPolynomial.load();
             polynomialFunctionController = fxmlLoaderPolynomial.getController();
 
             fxmlLoaderLagrange = new FXMLLoader();
-            fxmlLoaderLagrange.setLocation(getClass().getResource("../fxml/lagrangeFunctionSet.fxml"));
+            fxmlLoaderLagrange.setLocation(getClass().getResource("../fxml/choiceMethods/lagrangeFunctionSet.fxml"));
             fxmlLoaderLagrange.setResources(resourceBundle);
             parentLagrange = fxmlLoaderLagrange.load();
             controller = fxmlLoaderLagrange.getController();
@@ -80,21 +95,9 @@ public class ChoiceFunctionSetController implements Initializable {
         }
     }
 
-    private Stage initializeStage(String title, int minWidth, int minHeight, boolean resizable, Parent parent, Modality modality, Window owner) {
-        Stage stage = new Stage();
-        stage.setTitle(title);
-        stage.setMinWidth(minWidth);
-        stage.setMinHeight(minHeight);
-        stage.setResizable(resizable);
-        stage.setScene(new Scene(parent));
-        stage.initModality(modality);
-        stage.initOwner(owner);
-        return stage;
-    }
-
     public void action_buttonSetString(ActionEvent actionEvent) {
         if (stringStage == null) {
-            stringStage = initializeStage("", 300, 200, false, parentString, Modality.WINDOW_MODAL, labelTitle.getScene().getWindow());
+            stringStage = FXHelper.initializeStage("", 300, 200, false, parentString, Modality.WINDOW_MODAL, labelTitle.getScene().getWindow());
         }
 
         stringStage.showAndWait();
@@ -107,7 +110,7 @@ public class ChoiceFunctionSetController implements Initializable {
 
     public void action_buttonSetPolynomial(ActionEvent actionEvent) {
         if (polynomialStage == null) {
-            polynomialStage = initializeStage("", 300, 200, false, parentPolynomial, Modality.WINDOW_MODAL, labelTitle.getScene().getWindow());
+            polynomialStage = FXHelper.initializeStage("", 300, 200, false, parentPolynomial, Modality.WINDOW_MODAL, labelTitle.getScene().getWindow());
         }
         polynomialStage.showAndWait();
 
@@ -119,7 +122,7 @@ public class ChoiceFunctionSetController implements Initializable {
 
     public void action_buttonSetLagrangePolynomial(ActionEvent actionEvent) {
         if (lagrangeStage == null) {
-            lagrangeStage = initializeStage("", 300, 200, false, parentLagrange, Modality.WINDOW_MODAL, labelTitle.getScene().getWindow());
+            lagrangeStage = FXHelper.initializeStage("", 300, 200, false, parentLagrange, Modality.WINDOW_MODAL, labelTitle.getScene().getWindow());
         }
         lagrangeStage.showAndWait();
 
@@ -130,6 +133,9 @@ public class ChoiceFunctionSetController implements Initializable {
     }
 
     public void action_buttonOk(ActionEvent actionEvent) {
+        if(runnableDoubleFunction != null){
+            runnableDoubleFunction.setFunctionSettings(new FunctionSettings(Color.web((String) comboBoxColor.getSelectionModel().getSelectedItem())));
+        }
         labelStatus.getScene().getWindow().hide();
     }
 

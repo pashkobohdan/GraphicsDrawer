@@ -1,6 +1,6 @@
 package library.function;
 
-import javafx.geometry.Point2D;
+import library.function.settings.FunctionSettings;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
@@ -8,6 +8,7 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 public class StringFunction implements RunnableDoubleFunction {
+    private FunctionSettings functionSettings = new FunctionSettings();
 
     private String equationString;
     private String functionString;
@@ -177,6 +178,16 @@ public class StringFunction implements RunnableDoubleFunction {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public FunctionSettings getFunctionSettings() {
+        return functionSettings;
+    }
+
+    @Override
+    public void setFunctionSettings(FunctionSettings functionSettings) {
+        this.functionSettings = functionSettings;
     }
 
     @Override

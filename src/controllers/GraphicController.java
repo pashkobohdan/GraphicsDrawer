@@ -1,26 +1,33 @@
 package controllers;
 
+import controllers.settings.GraphicSettingsController;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import library.function.RunnableDoubleFunction;
+import library.function.settings.FunctionSettings;
 import library.graphic.CanvasGraphic;
+import library.graphic.settings.GraphicSettings;
+import library.util.FXHelper;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class GraphicController implements Initializable {
+    @FXML
+    private MenuBar menuBar;
     @FXML
     private Label labelFunction1, labelFunction2;
     @FXML
@@ -34,7 +41,23 @@ public class GraphicController implements Initializable {
 
     private ResourceBundle resourceBundle;
 
-    CanvasGraphic canvasGraphic;
+    private CanvasGraphic canvasGraphic;
+    private RunnableDoubleFunction functionFX, functionGX;
+
+    private FXMLLoader fxmlLoaderSetFX;
+    private Parent parentSetFX;
+    private ChoiceFunctionSetController choiceFunctionSetFXController;
+    Stage choiceFunctionFXStage;
+
+    private FXMLLoader fxmlLoaderSetGX;
+    private Parent parentSetGX;
+    private ChoiceFunctionSetController choiceFunctionSetGXController;
+    Stage choiceFunctionGXStage;
+
+    private FXMLLoader fxmlLoaderSettings;
+    private Parent parentSettings;
+    private GraphicSettingsController graphicSettingsController;
+    Stage settingsStage;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -65,14 +88,12 @@ public class GraphicController implements Initializable {
 //        );
 //        lagrangePolynomialFunction.initialize();
 
-        canvasGraphic = new CanvasGraphic(canvas, anchorPaneWithCanvas); // stringFunction, polynomialFunction, polynomialFunction1,lagrangePolynomialFunction
-        canvasGraphic.setClearBeforeDrawing(true);
-        canvasGraphic.setDrawCoordinateGrid(true);
-        canvasGraphic.setDrawCurrentFunctionCoordinates(true);
-        //canvasGraphic.setDrawCurrentMouseCoordinate(true);
-        //canvasGraphic.setEnterMouseDots(true);
+        canvasGraphic = new CanvasGraphic(canvas, anchorPaneWithCanvas, new GraphicSettings());
         canvasGraphic.initialize();
 
+        initializeWindows();
+
+        initializeMenu();
 //        List<RunnableDoubleFunction> list = new LinkedList<RunnableDoubleFunction>();
 //        list.add(stringFunction);
 //        list.add(polynomialFunction);
@@ -84,41 +105,149 @@ public class GraphicController implements Initializable {
 //        System.out.println();
     }
 
-    public void button_setFirstFunction(ActionEvent actionEvent) {
-        try {
-            RunnableDoubleFunction runnableDoubleFunction = null;
+    private void initializeSettingsWindow(){
 
-            FXMLLoader fxmlLoaderChoiceFunctionSetMethod = new FXMLLoader();
-            fxmlLoaderChoiceFunctionSetMethod.setLocation(getClass().getResource("../fxml/choiceFunctionSet.fxml"));
-            fxmlLoaderChoiceFunctionSetMethod.setResources(resourceBundle);
-            Parent parentFunctionSetMethod = fxmlLoaderChoiceFunctionSetMethod.load();
-            ChoiceFunctionSetController choiceFunctionSetController = fxmlLoaderChoiceFunctionSetMethod.getController();
+    }
 
-            Stage choiceFunctionSetMethodStage = new Stage();
-//            choiceFunctionSetMethodStage.setTitle(resourceBundle.getString("key.dialog.newPlaylist.Title"));
-            choiceFunctionSetMethodStage.setMinWidth(250);
-            choiceFunctionSetMethodStage.setMinHeight(300);
-            choiceFunctionSetMethodStage.setResizable(false);
-            choiceFunctionSetMethodStage.setScene(new Scene(parentFunctionSetMethod));
-            choiceFunctionSetMethodStage.initModality(Modality.WINDOW_MODAL);
-            choiceFunctionSetMethodStage.initOwner(anchorPaneWithCanvas.getScene().getWindow());
+    private void initializeMenu() {
+        Menu file = new Menu(resourceBundle.getString("menu.file.title"));
+        Menu graphic = new Menu(resourceBundle.getString("menu.graphic.title"));
+        Menu equation = new Menu(resourceBundle.getString("menu.equation.title"));
+        Menu help = new Menu(resourceBundle.getString("menu.help.title"));
 
-            choiceFunctionSetMethodStage.showAndWait();
+        // file
+        MenuItem fileOpen = new MenuItem(resourceBundle.getString("menu.file.open"));
+        MenuItem fileSave = new MenuItem(resourceBundle.getString("menu.file.save"));
+        MenuItem fileSaveAs = new MenuItem(resourceBundle.getString("menu.file.saveAs"));
+        MenuItem fileNew = new MenuItem(resourceBundle.getString("menu.file.new"));
+        MenuItem fileExit = new MenuItem(resourceBundle.getString("menu.file.Exit"));
+        fileOpen.setOnAction((event)->{
 
-            if(choiceFunctionSetController.getRunnableDoubleFunction() != null){
-                // to do
-                canvasGraphic.addFunction(choiceFunctionSetController.getRunnableDoubleFunction());
+        });
+        fileSave.setOnAction((event)->{
 
-                if(!canvasGraphic.isInitialised()){
-                    canvasGraphic.initialize();
-                }
-                canvasGraphic.refreshGraphic();
+        });
+        fileSaveAs.setOnAction((event)->{
+
+        });
+        fileNew.setOnAction((event)->{
+
+        });
+        fileExit.setOnAction((event)->{
+            //save
+            Platform.exit();
+        });
+        file.getItems().addAll(fileOpen, fileSave, fileSaveAs, fileNew, fileExit);
+
+        // graphic
+        MenuItem graphicRedraw = new MenuItem(resourceBundle.getString("menu.graphic.redraw"));
+        MenuItem graphicSettings = new MenuItem(resourceBundle.getString("menu.graphic.settings"));
+        MenuItem graphicSetEdges = new MenuItem(resourceBundle.getString("menu.graphic.setEdges"));
+        graphicRedraw.setOnAction((event)->{
+            canvasGraphic.refreshGraphic();
+        });
+        graphicSettings.setOnAction((event)->{
+            if (settingsStage == null) {
+                settingsStage = FXHelper.initializeStage("", 400, 550, false, parentSettings, Modality.WINDOW_MODAL, labelFunction1.getScene().getWindow());
             }
+            settingsStage.showAndWait();
+        });
+        graphicSetEdges.setOnAction((event)->{
+
+        });
+        graphic.getItems().addAll(graphicRedraw, graphicSettings, graphicSetEdges);
+
+        // equation
+        MenuItem equationSearchRoots = new MenuItem(resourceBundle.getString("menu.equation.searchRoots"));
+        equationSearchRoots.setOnAction((event)->{
+
+        });
+        equation.getItems().addAll(equationSearchRoots);
+
+        // help
+        MenuItem helpAbout = new MenuItem(resourceBundle.getString("menu.help.about"));
+        MenuItem helpHelp = new MenuItem(resourceBundle.getString("menu.help.help"));
+        helpAbout.setOnAction((event)->{
+
+        });
+        helpHelp.setOnAction((event)->{
+
+        });
+        help.getItems().addAll(helpAbout, helpHelp);
+
+
+        menuBar.getMenus().addAll(file, graphic, equation, help);
+    }
+
+    private void initializeWindows() {
+        try {
+            // setters functions (different methods)
+            fxmlLoaderSetFX = new FXMLLoader();
+            fxmlLoaderSetFX.setLocation(getClass().getResource("../fxml/choiceMethods/choiceFunctionSet.fxml"));
+            fxmlLoaderSetFX.setResources(resourceBundle);
+            parentSetFX = fxmlLoaderSetFX.load();
+            choiceFunctionSetFXController = fxmlLoaderSetFX.getController();
+
+            fxmlLoaderSetGX = new FXMLLoader();
+            fxmlLoaderSetGX.setLocation(getClass().getResource("../fxml/choiceMethods/choiceFunctionSet.fxml"));
+            fxmlLoaderSetGX.setResources(resourceBundle);
+            parentSetGX = fxmlLoaderSetGX.load();
+            choiceFunctionSetGXController = fxmlLoaderSetGX.getController();
+
+            //settings
+            fxmlLoaderSettings = new FXMLLoader();
+            fxmlLoaderSettings.setLocation(getClass().getResource("../fxml/settings/settings.fxml"));
+            fxmlLoaderSettings.setResources(resourceBundle);
+            parentSettings = fxmlLoaderSettings.load();
+            graphicSettingsController = fxmlLoaderSettings.getController();
+            graphicSettingsController.setGraphicSettings(canvasGraphic.getGraphicSettings());
+
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    public void button_setFirstFunction(ActionEvent actionEvent) {
+        if (choiceFunctionFXStage == null) {
+            choiceFunctionFXStage = FXHelper.initializeStage("", 250, 300, false, parentSetFX, Modality.WINDOW_MODAL, labelFunction1.getScene().getWindow());
+        }
+        choiceFunctionFXStage.showAndWait();
+
+        if (choiceFunctionSetFXController.getRunnableDoubleFunction() != null) {
+
+            if (canvasGraphic.getFunctions() != null && canvasGraphic.getFunctions().get(0) != null) {
+                canvasGraphic.getFunctions().remove(0);
+            }
+            functionFX = choiceFunctionSetFXController.getRunnableDoubleFunction();
+            canvasGraphic.addFunction(0, functionFX);
+
+            if (!canvasGraphic.isInitialised()) {
+                canvasGraphic.initialize();
+            }
+            canvasGraphic.refreshGraphic();
+        }
+    }
+
     public void button_setSecondFunction(ActionEvent actionEvent) {
+        if (choiceFunctionGXStage == null) {
+            choiceFunctionGXStage = FXHelper.initializeStage("", 250, 300, false, parentSetGX, Modality.WINDOW_MODAL, labelFunction1.getScene().getWindow());
+        }
+        choiceFunctionGXStage.showAndWait();
+
+        if (choiceFunctionSetGXController.getRunnableDoubleFunction() != null) {
+            if (canvasGraphic.getFunctions() != null && canvasGraphic.getFunctions().size() > 1 && canvasGraphic.getFunctions().get(1) != null) {
+                canvasGraphic.getFunctions().remove(1);
+            }
+            else{
+                canvasGraphic.addFunction(null);
+            }
+            functionGX = choiceFunctionSetGXController.getRunnableDoubleFunction();
+            canvasGraphic.addFunction(1, functionGX);
+
+            if (!canvasGraphic.isInitialised()) {
+                canvasGraphic.initialize();
+            }
+            canvasGraphic.refreshGraphic();
+        }
     }
 }

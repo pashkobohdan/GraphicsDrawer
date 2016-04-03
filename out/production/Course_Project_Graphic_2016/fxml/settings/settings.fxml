@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.settings.GraphicSettingsController">
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <children>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <content>
+            <VBox prefHeight="530.0" prefWidth="380.0">
+               <children>
+                  <AnchorPane minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="labelSubTitleCheckBox" alignment="CENTER" layoutX="176.0" layoutY="6.0" text="title 1" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="30.0" prefHeight="30.0" prefWidth="380.0">
+                     <children>
+                        <CheckBox fx:id="checkBoxClearBedoreDraw" layoutY="6.0" mnemonicParsing="false" text="CheckBox" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox fx:id="checkBoxDrawCoordinateGrid" layoutY="6.0" mnemonicParsing="false" text="CheckBox" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox fx:id="checkBoxDrawMouseCoordinate" layoutY="6.0" mnemonicParsing="false" text="CheckBox" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox fx:id="checkBoxDrawFunctionValue" layoutY="8.0" mnemonicParsing="false" text="CheckBox" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox fx:id="checkBoxDrawMouseClickDots" layoutY="6.0" mnemonicParsing="false" text="CheckBox" />
+                     </children>
+                  </AnchorPane>
+                  <Separator prefWidth="200.0" />
+                  <AnchorPane minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="labelSubTitleComboBox" alignment="CENTER" text="title 2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="labelCBColorOfBackground" layoutX="14.0" layoutY="7.0" text="Label" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="14.0" />
+                        <ComboBox fx:id="comboBoxColorOfBackground" layoutX="230.0" layoutY="2.0" prefWidth="150.0" AnchorPane.bottomAnchor="3.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="labelCBColorOfEdges" layoutX="14.0" layoutY="6.0" text="Label" AnchorPane.bottomAnchor="5.0" />
+                        <ComboBox fx:id="comboBoxColorOfEdges" layoutX="230.0" layoutY="4.0" prefWidth="150.0" AnchorPane.bottomAnchor="3.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="labelCBColorOfCoordinateLines" layoutX="14.0" layoutY="6.0" text="Label" AnchorPane.bottomAnchor="5.0" />
+                        <ComboBox fx:id="comboBoxColorOfCoordinateLines" layoutX="230.0" layoutY="3.0" prefWidth="150.0" AnchorPane.bottomAnchor="3.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="labelCBColorOfCoordinateValues" layoutX="14.0" layoutY="6.0" text="Label" AnchorPane.bottomAnchor="5.0" />
+                        <ComboBox fx:id="comboBoxColorOfCoordinateValues" layoutX="230.0" layoutY="4.0" prefWidth="150.0" AnchorPane.bottomAnchor="3.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="labelCBColorOfCoordinateGrid" layoutX="14.0" layoutY="6.0" text="Label" AnchorPane.bottomAnchor="5.0" />
+                        <ComboBox fx:id="comboBoxColorOfCoordinateGrid" layoutX="230.0" layoutY="4.0" prefWidth="150.0" AnchorPane.bottomAnchor="3.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="labelCBColorOfFunctionValuesDots" layoutX="14.0" layoutY="7.0" text="Label" AnchorPane.bottomAnchor="5.0" />
+                        <ComboBox fx:id="comboBoxColorOfFunctionValuesDots" layoutX="230.0" layoutY="4.0" prefWidth="150.0" AnchorPane.bottomAnchor="3.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="labelCBColorOfMouseDots" layoutX="14.0" layoutY="5.0" text="Label" />
+                        <ComboBox fx:id="comboBoxColorOfMouseDots" layoutX="230.0" layoutY="1.0" prefWidth="150.0" AnchorPane.bottomAnchor="3.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="labelCBColorOfRootsDots" layoutX="14.0" layoutY="6.0" text="Label" />
+                        <ComboBox fx:id="comboBoxColorOfRootsDots" layoutX="230.0" layoutY="2.0" prefWidth="150.0" AnchorPane.bottomAnchor="3.0" />
+                     </children>
+                  </AnchorPane>
+                  <Separator prefWidth="200.0" />
+                  <AnchorPane minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="labelSubTitleSlider" alignment="CENTER" layoutX="176.0" layoutY="6.0" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="50.0" prefHeight="50.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="labelSlMinOneLineSegment" layoutX="14.0" layoutY="6.0" text="Label" AnchorPane.topAnchor="5.0" />
+                        <Slider fx:id="sliderMinOneLineSegment" layoutX="240.0" layoutY="7.0" AnchorPane.topAnchor="7.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="50.0" prefHeight="50.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="labelSlZoomSensivity" layoutX="14.0" layoutY="8.0" text="Label" AnchorPane.topAnchor="5.0" />
+                        <Slider fx:id="sliderZoomSensivity" layoutX="240.0" layoutY="7.0" AnchorPane.topAnchor="7.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="50.0" prefHeight="50.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="labelSlRunAwaySensivity" layoutX="14.0" layoutY="6.0" text="Label" AnchorPane.topAnchor="5.0" />
+                        <Slider fx:id="sliderRunAwaySensivity" layoutX="240.0" layoutY="7.0" AnchorPane.topAnchor="7.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </content>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </ScrollPane>
+   </children>
+</VBox>

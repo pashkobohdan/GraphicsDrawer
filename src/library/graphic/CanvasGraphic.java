@@ -5,10 +5,9 @@ import javafx.geometry.Point2D;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.Region;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 import library.doubleFunctions.Dividers;
 import library.function.RunnableDoubleFunction;
+import library.graphic.settings.GraphicSettings;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -18,9 +17,6 @@ public class CanvasGraphic {
     public static final double DEFAULT_SCALE = 100;
     public static final double INIT_WIDTH = 0.5;
     public static final double INIT_HEIGHT = 0.5;
-    public static final double RUN_AWAY_GRAPHIC_SENSITIVITY = 0.05; // min[0..1]max
-    public static final double MIN_PIXELS_IN_ONE_COORDINATE = 60;
-    public static final double ZOOM_SENSITIVITY = 0.02; // [0...1]
 
     private Canvas canvas;
     private Region regionWithCanvas;
@@ -37,12 +33,7 @@ public class CanvasGraphic {
     private boolean isMouseEnter = false;
     private boolean isMouseDragged;
 
-    private boolean isClearBeforeDrawing;
-    private boolean isDrawCoordinateGrid;
-    private boolean isDrawCurrentFunctionCoordinates;
-    private boolean isDrawCurrentMouseCoordinate;
-
-    private boolean isEnterMouseDots;
+    private GraphicSettings graphicSettings;
     private List<Point2D> museClicksDots;
 
     private List<Double> horizontalLines, verticalLines;
@@ -51,43 +42,57 @@ public class CanvasGraphic {
 
     private boolean isInitialised;
 
-    public CanvasGraphic(@NotNull Canvas canvas, @NotNull Region regionWithCanvas, @NotNull List<RunnableDoubleFunction> functions) {
+    public CanvasGraphic(@NotNull Canvas canvas, @NotNull Region regionWithCanvas, GraphicSettings graphicSettings, @NotNull List<RunnableDoubleFunction> functions) {
         this.canvas = canvas;
         this.regionWithCanvas = regionWithCanvas;
         this.functions = functions;
+        this.setGraphicSettings(graphicSettings);
+        graphicSettings.setCanvasGraphic(this);
 
         graphicsContext = canvas.getGraphicsContext2D();
-
-        setClearBeforeDrawing(false);
-        setDrawCoordinateGrid(false);
     }
 
-    public CanvasGraphic(@NotNull Canvas canvas, @NotNull Region regionWithCanvas, @NotNull RunnableDoubleFunction... functions) {
+    public CanvasGraphic(@NotNull Canvas canvas, @NotNull Region regionWithCanvas, GraphicSettings graphicSettings, @NotNull RunnableDoubleFunction... functions) {
         this.canvas = canvas;
         this.regionWithCanvas = regionWithCanvas;
         this.functions = Arrays.asList(functions);
+        this.setGraphicSettings(graphicSettings);
+        graphicSettings.setCanvasGraphic(this);
 
         graphicsContext = canvas.getGraphicsContext2D();
-
-        setClearBeforeDrawing(false);
-        setDrawCoordinateGrid(false);
     }
 
-    public CanvasGraphic(Canvas canvas, Region regionWithCanvas) {
+    public CanvasGraphic(Canvas canvas, Region regionWithCanvas, GraphicSettings graphicSettings) {
         this.canvas = canvas;
         this.regionWithCanvas = regionWithCanvas;
+        this.setGraphicSettings(graphicSettings);
+        graphicSettings.setCanvasGraphic(this);
 
         graphicsContext = canvas.getGraphicsContext2D();
-
-        setClearBeforeDrawing(false);
-        setDrawCoordinateGrid(false);
     }
 
     public void addFunction(RunnableDoubleFunction function) {
+        if (functions == null) {
+            functions = new LinkedList<>();
+        }
+        functions.add(function);
+    }
+
+    public void addFunction(int index, RunnableDoubleFunction function) {
         if (getFunctions() == null) {
             functions = new LinkedList<>();
         }
-        getFunctions().add(function);
+        getFunctions().add(index, function);
+    }
+
+    public void removeFunction(RunnableDoubleFunction function) {
+        if (getFunctions() != null) {
+            try {
+                functions.remove(function);
+            } catch (Exception e) {
+
+            }
+        }
     }
 
     public void initialize() {
@@ -139,7 +144,7 @@ public class CanvasGraphic {
         });
 
         canvas.setOnMouseReleased((event) -> {
-            if (!isMouseDragged && isEnterMouseDots) {
+            if (!isMouseDragged && getGraphicSettings().isEnterMouseDots()) {
                 if (museClicksDots == null) {
                     museClicksDots = new LinkedList<>();
                 }
@@ -174,16 +179,8 @@ public class CanvasGraphic {
             absoluteMouseX = (pixelMouseX - absoluteCenterX * canvasWidth) / scale;
             absoluteMouseY = (pixelMouseY - absoluteCenterY * canvasHeight) / scale;
 
-            if (isDrawCurrentFunctionCoordinates) {
-                refreshGraphic();
-                graphicsContext.setFill(Color.BLACK);
-                drawCurrentPositionDots(pixelMouseX);
-            }
+            refreshGraphic();
 
-            if (isDrawCurrentMouseCoordinate) {
-                refreshGraphic();
-                drawCurrentMouseCoordinate(pixelMouseX, pixelMouseY, Dividers.doubleToNormalValue(absoluteMouseX), Dividers.doubleToNormalValue(absoluteMouseY));
-            }
             //System.out.println("mouseX:"+absoluteMouseX+"mouseY:"+absoluteMouseY);
         });
 
@@ -200,15 +197,15 @@ public class CanvasGraphic {
                 scale *= -1;
             }
 
-            scale = event.getDeltaY() > 0 ? scale * (1 + ZOOM_SENSITIVITY) : scale * (1 - ZOOM_SENSITIVITY);
+            scale = event.getDeltaY() > 0 ? scale * (1 + graphicSettings.getZoomSensivity() / 10.0) : scale * (1 - graphicSettings.getZoomSensivity() / 10.0);
 
             if (event.getDeltaY() > 0) {
                 absoluteCenterX = (pixelMouseX - absoluteMouseX * scale) / canvasWidth;
                 absoluteCenterY = (pixelMouseY - absoluteMouseY * scale) / canvasHeight;
 
             } else {
-                absoluteCenterX += (pixelMouseX / canvasWidth - absoluteCenterX) * RUN_AWAY_GRAPHIC_SENSITIVITY;
-                absoluteCenterY += (pixelMouseY / canvasHeight - absoluteCenterY) * RUN_AWAY_GRAPHIC_SENSITIVITY;
+                absoluteCenterX += (pixelMouseX / canvasWidth - absoluteCenterX) * graphicSettings.getRunAwaySensivity() / 10.0;
+                absoluteCenterY += (pixelMouseY / canvasHeight - absoluteCenterY) * graphicSettings.getRunAwaySensivity() / 10.0;
 
                 absoluteMouseX = (pixelMouseX - absoluteCenterX * canvasWidth) / scale;
                 absoluteMouseY = (pixelMouseY - absoluteCenterY * canvasHeight) / scale;
@@ -219,8 +216,10 @@ public class CanvasGraphic {
     }
 
     private void drawCurrentPositionDots(double pixelX) {
-        for (RunnableDoubleFunction function : getFunctions()) {
-            fillDot(pixelX, calculatePixelFunctionY(pixelX, function), 5);
+        for (RunnableDoubleFunction function : functions) {
+            if (function != null) {
+                fillDot(pixelX, calculatePixelFunctionY(pixelX, function), 5);
+            }
         }
     }
 
@@ -239,7 +238,7 @@ public class CanvasGraphic {
     private List<Double> listOfCoordinateLines(double minAbsolute, double maxAbsolute, double heightOrWidth) {
         List<Double> result = new LinkedList<>();
 
-        double step = Dividers.get125PowerMinDivider((maxAbsolute - minAbsolute) / (int) (heightOrWidth / MIN_PIXELS_IN_ONE_COORDINATE));
+        double step = Dividers.get125PowerMinDivider((maxAbsolute - minAbsolute) / (int) (heightOrWidth / graphicSettings.getMinOneLineSegment()));
         for (double i = (int) (minAbsolute / step) * step; i <= maxAbsolute; i += step) {
             if (Math.abs(i) < step / 2) {
                 result.add(0.0);
@@ -253,7 +252,7 @@ public class CanvasGraphic {
 
     private void drawCoordinateGrid() {
         for (Double arg : horizontalLines) {
-            if (isDrawCoordinateGrid) {
+            if (getGraphicSettings().isDrawCoordinateGrid()) {
                 if (arg != 0) {
                     strokeLine(calculatePixelX(arg), 0, calculatePixelX(arg), canvasHeight);
                 }
@@ -266,7 +265,7 @@ public class CanvasGraphic {
             if (arg == 0.0) {
                 continue;
             }
-            if (isDrawCoordinateGrid) {
+            if (getGraphicSettings().isDrawCoordinateGrid()) {
                 strokeLine(0, calculatePixelY(arg), canvasWidth, calculatePixelY(arg));
             } else {
                 strokeLine(calculatePixelX(0) - 3, calculatePixelY(arg), calculatePixelX(0) + 3, calculatePixelY(arg));
@@ -341,35 +340,55 @@ public class CanvasGraphic {
     }
 
     public void refreshGraphic() {
-        if (isClearBeforeDrawing()) {
-            graphicsContext.clearRect(0, 0, canvasWidth, canvasHeight);
+        if(!isInitialised){
+            return;
+        }
+        if (getGraphicSettings().isClearBeforeDrawing()) {
+            graphicsContext.setFill(getGraphicSettings().getClearColor());
+            graphicsContext.fillRect(0, 0, canvasWidth, canvasHeight);
+            //graphicsContext.clearRect(0, 0, canvasWidth, canvasHeight);
         }
 
-        graphicsContext.setStroke(Color.RED);
+        graphicsContext.setStroke(getGraphicSettings().getEdgesColor());
         drawEdges();
 
-        graphicsContext.setStroke(Color.BLACK);
+        graphicsContext.setStroke(getGraphicSettings().getCoordinateLinesColor());
         drawCoordinateLines();
 
         horizontalLines = listOfCoordinateLines(calculateAbsoluteX(0), calculateAbsoluteX(canvasWidth), canvasWidth);
         verticalLines = listOfCoordinateLines(-absoluteCenterY * canvasHeight / scale, (1 - absoluteCenterY) * canvasHeight / scale, canvasHeight);
-        graphicsContext.setStroke(new Color(Color.AQUA.getRed(), Color.AQUA.getGreen(), Color.AQUA.getBlue(), 0.25));
+
+        graphicsContext.setStroke(getGraphicSettings().getCoordinateGridColor());
         drawCoordinateGrid();
 
-        graphicsContext.setStroke(Color.RED);
-        graphicsContext.setFont(new Font("Monospaced", 10));
+        graphicsContext.setStroke(getGraphicSettings().getCoordinateValuesColor());
+        graphicsContext.setFont(getGraphicSettings().getCoordinateValuesFont());
         drawCoordinateValues();
 
-        graphicsContext.setStroke(Color.BLACK);
-        for (RunnableDoubleFunction function : getFunctions()) {
-            drawGraphic(function);
+        for (RunnableDoubleFunction function : functions) {
+            if (function != null) {
+                graphicsContext.setStroke(function.getFunctionSettings().getGraphicColor());
+                //graphicsContext.setLineWidth(3);
+                drawGraphic(function);
+            }
         }
 
-        graphicsContext.setFill(Color.GREEN);
-        if (isEnterMouseDots && museClicksDots != null) {
+        graphicsContext.setFill(getGraphicSettings().getMouseDotsColor());
+        if (getGraphicSettings().isEnterMouseDots() && museClicksDots != null) {
             for (Point2D arg : museClicksDots) {
                 fillDot(calculatePixelX(arg.getX()), calculatePixelY(arg.getY()), 7);
             }
+        }
+
+        if (canvas.isHover() && getGraphicSettings().isDrawCurrentFunctionCoordinates()) {
+            graphicsContext.setFill(getGraphicSettings().getDotsOnFunctionsColor());
+            drawCurrentPositionDots(pixelMouseX);
+        }
+
+        if (canvas.isHover() && getGraphicSettings().isDrawCurrentMouseCoordinate()) {
+            graphicsContext.setStroke(getGraphicSettings().getMouseCoordinateColor());
+            graphicsContext.setFont(getGraphicSettings().getMouseCoordinateFont());
+            strokeText(Dividers.doubleToNormalValue(absoluteMouseX) + " : " + Dividers.doubleToNormalValue(absoluteMouseY), pixelMouseX, pixelMouseY);
         }
     }
 
@@ -401,30 +420,6 @@ public class CanvasGraphic {
         graphicsContext.fillOval(x - radius / 2.0, canvasHeight - y - radius / 2.0, radius, radius);
     }
 
-    public boolean isClearBeforeDrawing() {
-        return isClearBeforeDrawing;
-    }
-
-    public void setClearBeforeDrawing(boolean clearBeforeDrawing) {
-        isClearBeforeDrawing = clearBeforeDrawing;
-    }
-
-    public boolean isDrawCoordinateGrid() {
-        return isDrawCoordinateGrid;
-    }
-
-    public void setDrawCoordinateGrid(boolean drawCoordinateGrid) {
-        isDrawCoordinateGrid = drawCoordinateGrid;
-    }
-
-    public boolean isDrawCurrentFunctionCoordinates() {
-        return isDrawCurrentFunctionCoordinates;
-    }
-
-    public void setDrawCurrentFunctionCoordinates(boolean drawCurrentFunctionCoordinates) {
-        isDrawCurrentFunctionCoordinates = drawCurrentFunctionCoordinates;
-    }
-
     public boolean isInitialised() {
         return isInitialised;
     }
@@ -433,19 +428,11 @@ public class CanvasGraphic {
         return functions;
     }
 
-    public boolean isDrawCurrentMouseCoordinate() {
-        return isDrawCurrentMouseCoordinate;
+    public GraphicSettings getGraphicSettings() {
+        return graphicSettings;
     }
 
-    public void setDrawCurrentMouseCoordinate(boolean drawCurrentMouseCoordinate) {
-        isDrawCurrentMouseCoordinate = drawCurrentMouseCoordinate;
-    }
-
-    public boolean isEnterMouseDots() {
-        return isEnterMouseDots;
-    }
-
-    public void setEnterMouseDots(boolean enterMouseDots) {
-        isEnterMouseDots = enterMouseDots;
+    public void setGraphicSettings(GraphicSettings graphicSettings) {
+        this.graphicSettings = graphicSettings;
     }
 }

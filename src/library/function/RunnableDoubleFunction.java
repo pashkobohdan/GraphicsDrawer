@@ -1,5 +1,7 @@
 package library.function;
 
+import library.function.settings.FunctionSettings;
+
 /**
  *  Generic class for function with double argument and result type.
  */
@@ -20,4 +22,26 @@ public interface RunnableDoubleFunction {
      * @return result (OK or ERROR)
      */
     boolean initialize();
+
+
+
+    //***********************************************************
+    //                      Settings                            *
+    //                                                          *
+    //***********************************************************
+
+    /**
+     * Get a settings of current function (optional)
+     * Maybe null
+     *
+     * @return
+     */
+    FunctionSettings getFunctionSettings();
+
+    /**
+     * For change setting of current function
+     *
+     * @param functionSettings
+     */
+    void setFunctionSettings(FunctionSettings functionSettings);
 }

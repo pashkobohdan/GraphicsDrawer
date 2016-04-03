@@ -10,32 +10,7 @@
    <children>
       <AnchorPane prefHeight="25.0" prefWidth="600.0">
          <children>
-            <MenuBar prefHeight="25.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-              <menus>
-                <Menu id="menuFile" mnemonicParsing="false" text="File">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Open" />
-                        <MenuItem mnemonicParsing="false" text="Save" />
-                        <MenuItem mnemonicParsing="false" text="Save as" />
-                        <MenuItem mnemonicParsing="false" text="Create new" />
-                        <MenuItem mnemonicParsing="false" text="Save changes" />
-                        <MenuItem mnemonicParsing="false" text="Exit" />
-                  </items>
-                </Menu>
-                <Menu id="menuWork" mnemonicParsing="false" text="Work">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Search roots" />
-                        <MenuItem mnemonicParsing="false" text="Draw" />
-                     </items>
-                </Menu>
-                <Menu id="menuHelp" mnemonicParsing="false" text="Help">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
-                        <MenuItem mnemonicParsing="false" text="Help" />
-                  </items>
-                </Menu>
-              </menus>
-            </MenuBar>
+            <MenuBar fx:id="menuBar" prefHeight="25.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
          </children>
       </AnchorPane>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="375.0" prefWidth="600.0" VBox.vgrow="ALWAYS">

@@ -1,6 +1,7 @@
 package library.function;
 
 import javafx.geometry.Point2D;
+import library.function.settings.FunctionSettings;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -8,6 +9,8 @@ import java.util.List;
 import java.util.Map;
 
 public class LagrangePolynomialFunction implements RunnableDoubleFunction {
+    private FunctionSettings functionSettings = new FunctionSettings();
+
     private List<Point2D> dots;
     private List<Double> coefficients;
 
@@ -78,5 +81,15 @@ public class LagrangePolynomialFunction implements RunnableDoubleFunction {
             result += "x:" + point2D.getX() + "  y:" + point2D.getY();
         }
         return result;
+    }
+
+    @Override
+    public void setFunctionSettings(FunctionSettings functionSettings) {
+        this.functionSettings = functionSettings;
+    }
+
+    @Override
+    public FunctionSettings getFunctionSettings() {
+        return functionSettings;
     }
 }

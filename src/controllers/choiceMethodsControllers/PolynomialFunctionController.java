@@ -1,4 +1,4 @@
-package controllers;
+package controllers.choiceMethodsControllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

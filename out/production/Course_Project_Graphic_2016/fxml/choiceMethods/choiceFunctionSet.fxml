@@ -36,11 +36,24 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </VBox.margin>
       </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+      <AnchorPane prefHeight="30.0" prefWidth="200.0">
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+         <children>
+            <Label fx:id="labelColor" layoutY="8.0" text="color" />
+            <ComboBox fx:id="comboBoxColor" layoutX="80.0" layoutY="4.0" prefWidth="150.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="30.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="labelStatus" alignment="CENTER" text="status" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="30.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
          <children>
             <Button fx:id="buttonOk" defaultButton="true" layoutX="238.0" layoutY="174.0" mnemonicParsing="false" onAction="#action_buttonOk" text="ok" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="0.0" />
             <Button fx:id="buttonCancel" cancelButton="true" layoutY="174.0" mnemonicParsing="false" onAction="#action_buttonCancel" text="cancel" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="130.0" />
-            <Label fx:id="labelStatus" alignment="CENTER" layoutX="101.0" layoutY="6.0" text="status" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
          </children>
          <VBox.margin>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
