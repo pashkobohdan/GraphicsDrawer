@@ -5,11 +5,16 @@ import library.function.settings.FunctionSettings;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.function.BinaryOperator;
 
 public class PolynomialFunction implements RunnableDoubleFunction {
     private FunctionSettings functionSettings = new FunctionSettings();
 
     private List<Double> coefficients;
+
+    public PolynomialFunction(){
+
+    }
 
     public PolynomialFunction(List<Double> coefficients) {
         this.setCoefficients(coefficients);
@@ -56,8 +61,29 @@ public class PolynomialFunction implements RunnableDoubleFunction {
     }
 
     @Override
+    public int getType() {
+        return 1;
+    }
+
+    @Override
+    public RunnableDoubleFunction parseByString(String string) {
+        List<Double> coefficients = new LinkedList<>();
+        for(String coeff : string.split(" ")){
+            if(coeff.equals(" ")){
+                break;
+            }
+            coefficients.add(Double.parseDouble(coeff));
+        }
+        return new PolynomialFunction(coefficients);
+    }
+
+    @Override
     public String toString(){
-        return coefficients.toString();
+        String result = "";
+        for(double coeff : coefficients){
+            result+=coeff+" ";
+        }
+        return result;
     }
 
     public List<Double> getCoefficients() {

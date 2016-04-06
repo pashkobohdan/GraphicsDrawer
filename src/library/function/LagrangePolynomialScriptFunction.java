@@ -112,6 +112,16 @@ public class LagrangePolynomialScriptFunction implements RunnableDoubleFunction{
         this.functionSettings = functionSettings;
     }
 
+    @Override
+    public int getType() {
+        return 2;
+    }
+
+    @Override
+    public RunnableDoubleFunction parseByString(String string) {
+        return null;
+    }
+
     private void initializeEngine() {
         scriptEngine = new ScriptEngineManager().getEngineByName("js");
     }

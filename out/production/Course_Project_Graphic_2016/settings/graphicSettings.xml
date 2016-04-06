@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<writeGraphicSettings>
+    <clearBeforeDrawing>true</clearBeforeDrawing>
+    <clearColor>0xffffffff</clearColor>
+    <coordinateGridColor>0xffe4c4ff</coordinateGridColor>
+    <coordinateLinesColor>0x000000ff</coordinateLinesColor>
+    <coordinateValuesColor>0x000000ff</coordinateValuesColor>
+    <coordinateValuesFont>Font[name=System Regular, family=System, style=Regular, size=12.0]</coordinateValuesFont>
+    <dotsOnFunctionsColor>0x800080ff</dotsOnFunctionsColor>
+    <drawCoordinateGrid>true</drawCoordinateGrid>
+    <drawCurrentFunctionCoordinates>true</drawCurrentFunctionCoordinates>
+    <drawCurrentMouseCoordinate>false</drawCurrentMouseCoordinate>
+    <edgesColor>0xff0000ff</edgesColor>
+    <enterMouseDots>false</enterMouseDots>
+    <minOneLineSegment>62.22222222222222</minOneLineSegment>
+    <mouseCoordinateColor>0x000000ff</mouseCoordinateColor>
+    <mouseCoordinateFont>Font[name=System Regular, family=System, style=Regular, size=12.0]</mouseCoordinateFont>
+    <mouseDotsColor>0x008000ff</mouseDotsColor>
+    <runAwaySensivity>0.5</runAwaySensivity>
+    <solverDotsColor>0xff0000ff</solverDotsColor>
+    <zoomSensivity>0.2</zoomSensivity>
+</writeGraphicSettings>

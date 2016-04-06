@@ -1,5 +1,6 @@
 package controllers.settings;
 
+import controllers.GraphicController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -8,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import library.graphic.settings.GraphicSettings;
+import library.graphic.settings.WriteGraphicSettings;
 
 import java.net.URL;
 import java.util.List;
@@ -81,15 +83,12 @@ public class GraphicSettingsController implements Initializable {
 
         sliderMinOneLineSegment.valueProperty().addListener((observable, oldValue, newValue) -> {
             graphicSettings.setMinOneLineSegment((double) newValue);
-            refreshGraphic();
         });
         sliderZoomSensivity.valueProperty().addListener((observable, oldValue, newValue) -> {
             graphicSettings.setZoomSensivity((double) newValue);
-            refreshGraphic();
         });
         sliderRunAwaySensivity.valueProperty().addListener((observable, oldValue, newValue) -> {
             graphicSettings.setRunAwaySensivity((double) newValue);
-            refreshGraphic();
         });
     }
 
@@ -118,23 +117,18 @@ public class GraphicSettingsController implements Initializable {
 
         checkBoxClearBedoreDraw.selectedProperty().addListener((observable, oldValue, newValue) -> {
             graphicSettings.setClearBeforeDrawing(newValue);
-            refreshGraphic();
         });
         checkBoxDrawCoordinateGrid.selectedProperty().addListener((observable, oldValue, newValue) -> {
             graphicSettings.setDrawCoordinateGrid(newValue);
-            refreshGraphic();
         });
         checkBoxDrawMouseCoordinate.selectedProperty().addListener((observable, oldValue, newValue) -> {
             graphicSettings.setDrawCurrentMouseCoordinate(newValue);
-            refreshGraphic();
         });
         checkBoxDrawFunctionValue.selectedProperty().addListener((observable, oldValue, newValue) -> {
             graphicSettings.setDrawCurrentFunctionCoordinates(newValue);
-            refreshGraphic();
         });
         checkBoxDrawMouseClickDots.selectedProperty().addListener((observable, oldValue, newValue) -> {
             graphicSettings.setEnterMouseDots(newValue);
-            refreshGraphic();
         });
     }
 
@@ -168,35 +162,27 @@ public class GraphicSettingsController implements Initializable {
 
         comboBoxColorOfBackground.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             graphicSettings.setClearColor(Color.web((String) newValue));
-            refreshGraphic();
         });
         comboBoxColorOfEdges.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             graphicSettings.setEdgesColor(Color.web((String) newValue));
-            refreshGraphic();
         });
         comboBoxColorOfCoordinateLines.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             graphicSettings.setCoordinateLinesColor(Color.web((String) newValue));
-            refreshGraphic();
         });
         comboBoxColorOfCoordinateValues.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             graphicSettings.setCoordinateValuesColor(Color.web((String) newValue));
-            refreshGraphic();
         });
         comboBoxColorOfCoordinateGrid.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             graphicSettings.setCoordinateGridColor(Color.web((String) newValue));
-            refreshGraphic();
         });
         comboBoxColorOfFunctionValuesDots.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             graphicSettings.setDotsOnFunctionsColor(Color.web((String) newValue));
-            refreshGraphic();
         });
         comboBoxColorOfMouseDots.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             graphicSettings.setMouseDotsColor(Color.web((String) newValue));
-            refreshGraphic();
         });
         comboBoxColorOfRootsDots.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             graphicSettings.setSolverDotsColor(Color.web((String) newValue));
-            refreshGraphic();
         });
     }
 
@@ -221,7 +207,4 @@ public class GraphicSettingsController implements Initializable {
         });
     }
 
-    private void refreshGraphic() {
-        graphicSettings.getCanvasGraphic().refreshGraphic();
-    }
 }

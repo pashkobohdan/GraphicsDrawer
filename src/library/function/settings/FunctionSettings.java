@@ -3,6 +3,8 @@ package library.function.settings;
 
 import javafx.scene.paint.Color;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Class for setting of current function (color, etc)
  * <p>
@@ -18,7 +20,7 @@ public class FunctionSettings {
     /**
      * Color of current function
      */
-    private Color graphicColor;
+    Color graphicColor;
 
     public FunctionSettings() {
         graphicColor = DEFAULT_FUNCTION_COLOR;

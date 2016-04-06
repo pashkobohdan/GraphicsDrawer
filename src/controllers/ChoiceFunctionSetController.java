@@ -4,8 +4,6 @@ import controllers.choiceMethodsControllers.LagrangePolynomialFunctionController
 import controllers.choiceMethodsControllers.PolynomialFunctionController;
 import controllers.choiceMethodsControllers.StringFunctionController;
 import controllers.settings.GraphicSettingsController;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -146,5 +144,10 @@ public class ChoiceFunctionSetController implements Initializable {
 
     public RunnableDoubleFunction getRunnableDoubleFunction() {
         return runnableDoubleFunction;
+    }
+
+    public void setRunnableDoubleFunction(RunnableDoubleFunction runnableDoubleFunction) {
+        this.runnableDoubleFunction = runnableDoubleFunction;
+        GraphicSettingsController.setCurrentColor(runnableDoubleFunction==null?Color.BLACK:runnableDoubleFunction.getFunctionSettings().getGraphicColor(), comboBoxColor, GraphicSettingsController.colors);
     }
 }

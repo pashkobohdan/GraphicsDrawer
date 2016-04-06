@@ -191,7 +191,19 @@ public class StringFunction implements RunnableDoubleFunction {
     }
 
     @Override
-    public String toString() {
-        return functionString;
+    public int getType() {
+        return 0;
     }
+
+    @Override
+    public RunnableDoubleFunction parseByString(String string) {
+        return new StringFunction(string);
+    }
+
+    @Override
+    public String toString() {
+        return equationString;
+    }
+
+
 }

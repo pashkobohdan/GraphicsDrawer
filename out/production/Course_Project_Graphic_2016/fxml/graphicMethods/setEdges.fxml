@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="30.0" prefWidth="200.0">
+         <children>
+            <Label layoutX="48.0" layoutY="8.0" text="x from" />
+            <TextField layoutX="114.0" layoutY="4.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="30.0" prefWidth="200.0">
+         <children>
+            <Label layoutX="49.0" layoutY="8.0" text="x to" />
+            <TextField layoutX="115.0" layoutY="4.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="30.0" prefWidth="200.0">
+         <children>
+            <Label layoutX="60.0" layoutY="6.0" text="y" />
+            <TextField layoutX="103.0" layoutY="2.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="30.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Button defaultButton="true" layoutX="216.0" layoutY="61.0" mnemonicParsing="false" prefWidth="80.0" text="ok" />
+            <Button cancelButton="true" layoutX="14.0" layoutY="61.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="cancel" />
+         </children>
+      </AnchorPane>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</VBox>

@@ -7,41 +7,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fxml/settings.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/library/graphic/settings/GraphicSettings.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/library/util/FXHelper.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/fxml/lagrangeFunctionSet.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/fxml/polynomialFunctionSet.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/fxml/stringFunctionSet.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/function/FunctionSettings.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/controllers/LagrangePolynomialFunctionController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/controllers/StringFunctionController.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/controllers/LagrangePolynomialFunctionController.java" afterPath="$PROJECT_DIR$/src/controllers/choiseMethodsControllers/LagrangePolynomialFunctionController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/controllers/PolynomialFunctionController.java" afterPath="$PROJECT_DIR$/src/controllers/choiseMethodsControllers/PolynomialFunctionController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/controllers/StringFunctionController.java" afterPath="$PROJECT_DIR$/src/controllers/choiseMethodsControllers/StringFunctionController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/fxml/lagrangeFunctionSet.fxml" afterPath="$PROJECT_DIR$/src/fxml/choiceMethods/lagrangeFunctionSet.fxml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/fxml/polynomialFunctionSet.fxml" afterPath="$PROJECT_DIR$/src/fxml/choiceMethods/polynomialFunctionSet.fxml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/fxml/stringFunctionSet.fxml" afterPath="$PROJECT_DIR$/src/fxml/choiceMethods/stringFunctionSet.fxml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/library/function/FunctionSettings.java" afterPath="$PROJECT_DIR$/src/library/function/settings/FunctionSettings.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/graphicMethods/SetEdgesController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fxml/graphicMethods/setEdges.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/library/graphic/settings/WriteFunction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/library/graphic/settings/WriteFunctionsSettings.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/library/graphic/settings/WriteGraphicSettings.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/controllers/ChoiceFunctionSetController.class" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/controllers/ChoiceFunctionSetController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/controllers/GraphicController.class" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/controllers/GraphicController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/controllers/settings/GraphicSettingsController$1.class" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/controllers/settings/GraphicSettingsController$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/controllers/settings/GraphicSettingsController.class" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/controllers/settings/GraphicSettingsController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/function/LagrangePolynomialFunction.class" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/function/LagrangePolynomialFunction.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/function/LagrangePolynomialScriptFunction.class" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/function/LagrangePolynomialScriptFunction.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/function/PolynomialFunction.class" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/function/PolynomialFunction.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/function/RunnableDoubleFunction.class" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/function/RunnableDoubleFunction.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/function/StringFunction.class" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/function/StringFunction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/function/settings/FunctionSettings.class" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/function/settings/FunctionSettings.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/graphic/CanvasGraphic.class" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/graphic/CanvasGraphic.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/graphic/settings/GraphicSettings.class" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/graphic/settings/GraphicSettings.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/util/FXHelper.class" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/util/FXHelper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/fxml/graphic.fxml" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/fxml/graphic.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/ChoiceFunctionSetController.java" afterPath="$PROJECT_DIR$/src/controllers/ChoiceFunctionSetController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/GraphicController.java" afterPath="$PROJECT_DIR$/src/controllers/GraphicController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fxml/graphic.fxml" afterPath="$PROJECT_DIR$/src/fxml/graphic.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/settings/GraphicSettingsController.java" afterPath="$PROJECT_DIR$/src/controllers/settings/GraphicSettingsController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/library/function/LagrangePolynomialFunction.java" afterPath="$PROJECT_DIR$/src/library/function/LagrangePolynomialFunction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/library/function/LagrangePolynomialScriptFunction.java" afterPath="$PROJECT_DIR$/src/library/function/LagrangePolynomialScriptFunction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/library/function/PolynomialFunction.java" afterPath="$PROJECT_DIR$/src/library/function/PolynomialFunction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/library/function/RunnableDoubleFunction.java" afterPath="$PROJECT_DIR$/src/library/function/RunnableDoubleFunction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/library/function/StringFunction.java" afterPath="$PROJECT_DIR$/src/library/function/StringFunction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/library/function/settings/FunctionSettings.java" afterPath="$PROJECT_DIR$/src/library/function/settings/FunctionSettings.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/library/graphic/CanvasGraphic.java" afterPath="$PROJECT_DIR$/src/library/graphic/CanvasGraphic.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/library/graphic/settings/GraphicSettings.java" afterPath="$PROJECT_DIR$/src/library/graphic/settings/GraphicSettings.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/library/util/FXHelper.java" afterPath="$PROJECT_DIR$/src/library/util/FXHelper.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -120,37 +116,10 @@
       <file leaf-file-name="GraphicController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controllers/GraphicController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2057">
-              <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+            <state relative-caret-position="544">
+              <caret line="180" column="35" selection-start-line="180" selection-start-column="35" selection-end-line="180" selection-end-column="35" />
               <folding>
-                <element signature="e#2370#2445#0" expanded="false" />
-                <element signature="e#3252#3339#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChoiceFunctionSetController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/ChoiceFunctionSetController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GraphicSettingsController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/settings/GraphicSettingsController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="202" column="18" selection-start-line="202" selection-start-column="18" selection-end-line="202" selection-end-column="18" />
-              <folding>
-                <element signature="method#initializeSliders#0;class#GraphicSettingsController#0" expanded="false" />
-                <element signature="method#setSliderMajors#0;class#GraphicSettingsController#0" expanded="false" />
-                <element signature="method#initializeBooleans#0;class#GraphicSettingsController#0" expanded="false" />
-                <element signature="method#setCurrentColor#0;class#GraphicSettingsController#0" expanded="false" />
-                <element signature="class#11382:11794" expanded="false" />
+                <element signature="e#2753#2828#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -159,8 +128,8 @@
       <file leaf-file-name="CanvasGraphic.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/library/graphic/CanvasGraphic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="83" column="9" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
+            <state relative-caret-position="-716">
+              <caret line="53" column="11" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
               <folding>
                 <element signature="method#drawCurrentPositionDots#0;class#CanvasGraphic#0" expanded="false" />
                 <element signature="method#drawCurrentMouseCoordinate#0;class#CanvasGraphic#0" expanded="false" />
@@ -169,21 +138,9 @@
                 <element signature="method#drawCoordinateValues#0;class#CanvasGraphic#0" expanded="false" />
                 <element signature="method#drawCoordinateLines#0;class#CanvasGraphic#0" expanded="false" />
                 <element signature="method#drawGraphic#0;class#CanvasGraphic#0" expanded="false" />
-                <element signature="method#refreshGraphic#0;class#CanvasGraphic#0" expanded="false" />
-                <element signature="method#calculatePixelFunctionY#0;class#CanvasGraphic#0" expanded="false" />
                 <element signature="method#strokeLine#0;class#CanvasGraphic#0" expanded="false" />
                 <element signature="method#fillDot#0;class#CanvasGraphic#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StringFunction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/library/function/StringFunction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -215,12 +172,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/library/Graphic/RunnableDoubleFunction.java" />
-        <option value="$PROJECT_DIR$/src/library/Equation/StringEquation.java" />
-        <option value="$PROJECT_DIR$/src/main/Test.java" />
-        <option value="$PROJECT_DIR$/src/library/Service.java" />
-        <option value="$PROJECT_DIR$/src/main/MyTest.java" />
-        <option value="$PROJECT_DIR$/src/library/interfaces/RunnableDoubleFunction.java" />
         <option value="$PROJECT_DIR$/src/library/Equation/PolynomFunction.java" />
         <option value="$PROJECT_DIR$/src/library/Equation/PolynomialFunction.java" />
         <option value="$PROJECT_DIR$/src/library/Graphic/CanvasGraphic.java" />
@@ -244,28 +195,34 @@
         <option value="$PROJECT_DIR$/src/controllers/LagrangePolynomialFunctionController.java" />
         <option value="$PROJECT_DIR$/src/bundles/Locale_ru.properties" />
         <option value="$PROJECT_DIR$/src/library/function/settings/GraphicsSettings.java" />
-        <option value="$PROJECT_DIR$/src/library/function/RunnableDoubleFunction.java" />
-        <option value="$PROJECT_DIR$/src/library/function/settings/FunctionSettings.java" />
-        <option value="$PROJECT_DIR$/src/library/function/StringFunction.java" />
-        <option value="$PROJECT_DIR$/src/library/function/PolynomialFunction.java" />
-        <option value="$PROJECT_DIR$/src/library/function/LagrangePolynomialScriptFunction.java" />
-        <option value="$PROJECT_DIR$/src/library/function/LagrangePolynomialFunction.java" />
         <option value="$PROJECT_DIR$/src/controllers/choiseMethodsControllers/StringFunctionController.java" />
         <option value="$PROJECT_DIR$/src/controllers/choiseMethodsControllers/ChoiceFunctionSetController.java" />
         <option value="$PROJECT_DIR$/src/fxml/choiceMethods/polynomialFunctionSet.fxml" />
         <option value="$PROJECT_DIR$/src/fxml/choiceMethods/lagrangeFunctionSet.fxml" />
         <option value="$PROJECT_DIR$/src/fxml/choiceMethods/stringFunctionSet.fxml" />
-        <option value="$PROJECT_DIR$/src/controllers/choiceMethodsControllers/ChoiceFunctionSetController.java" />
         <option value="$PROJECT_DIR$/src/fxml/settings/settings.fxml" />
         <option value="$PROJECT_DIR$/src/settings/mainLanguage.txt" />
-        <option value="$PROJECT_DIR$/src/library/graphic/settings/GraphicSettings.java" />
-        <option value="$PROJECT_DIR$/src/library/graphic/CanvasGraphic.java" />
         <option value="$PROJECT_DIR$/src/bundles/Locale_uk.properties" />
         <option value="$PROJECT_DIR$/src/bundles/Locale_en.properties" />
-        <option value="$PROJECT_DIR$/src/controllers/settings/GraphicSettingsController.java" />
-        <option value="$PROJECT_DIR$/src/controllers/ChoiceFunctionSetController.java" />
-        <option value="$PROJECT_DIR$/src/controllers/GraphicController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/choiceMethodsControllers/ChoiceFunctionSetController.java" />
+        <option value="$PROJECT_DIR$/src/fxml/choiceMethods/choiceFunctionSet.fxml" />
+        <option value="$PROJECT_DIR$/src/controllers/graphicMethods/SetEdgesController.java" />
+        <option value="$PROJECT_DIR$/src/library/graphic/settings/GraphicSettings.java" />
+        <option value="$PROJECT_DIR$/src/library/graphic/settings/AllSettings.java" />
         <option value="$PROJECT_DIR$/src/library/util/FXHelper.java" />
+        <option value="$PROJECT_DIR$/src/controllers/settings/GraphicSettingsController.java" />
+        <option value="$PROJECT_DIR$/src/library/graphic/settings/WriteGraphicSettings.java" />
+        <option value="$PROJECT_DIR$/src/library/function/settings/FunctionSettings.java" />
+        <option value="$PROJECT_DIR$/src/library/graphic/settings/WriteFunction.java" />
+        <option value="$PROJECT_DIR$/src/library/function/LagrangePolynomialScriptFunction.java" />
+        <option value="$PROJECT_DIR$/src/library/function/RunnableDoubleFunction.java" />
+        <option value="$PROJECT_DIR$/src/library/function/StringFunction.java" />
+        <option value="$PROJECT_DIR$/src/library/function/PolynomialFunction.java" />
+        <option value="$PROJECT_DIR$/src/library/function/LagrangePolynomialFunction.java" />
+        <option value="$PROJECT_DIR$/src/library/graphic/CanvasGraphic.java" />
+        <option value="$PROJECT_DIR$/src/controllers/ChoiceFunctionSetController.java" />
+        <option value="$PROJECT_DIR$/src/library/graphic/settings/WriteFunctionsSettings.java" />
+        <option value="$PROJECT_DIR$/src/controllers/GraphicController.java" />
       </list>
     </option>
   </component>
@@ -359,7 +316,6 @@
         <subPane />
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -634,6 +590,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="graphicMethods" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Course_Project_Graphic_2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Course_Project_Graphic_2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fxml" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="choiceMethods" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -696,6 +674,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="graphicMethods" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Course_Project_Graphic_2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Course_Project_Graphic_2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="choiceMethodsControllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -724,6 +724,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -742,7 +743,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../MusicPlayer" />
     <property name="SearchEverywhereHistoryKey" value="ChoiceFunctionSetController&#9;PSI&#9;JAVA://controllers.GraphicController#choiceFunctionSetFXController&#10;Runn&#9;FILE&#9;file://C:/Users/pashk/IdeaProjects/Course_Project_Graphic_2016/src/library/interfaces/RunnableDoubleFunction.java" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
@@ -1312,7 +1313,9 @@
       <workItem from="1459502666233" duration="36214000" />
       <workItem from="1459608117685" duration="136000" />
       <workItem from="1459608326657" duration="2173000" />
-      <workItem from="1459607567420" duration="41512000" />
+      <workItem from="1459607567420" duration="41595000" />
+      <workItem from="1459772995087" duration="27465000" />
+      <workItem from="1459955286604" duration="9017000" />
     </task>
     <servers />
   </component>
@@ -1328,7 +1331,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="226007000" />
+    <option name="totallyTimeSpent" value="262572000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1345,24 +1348,23 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5539216" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5488959" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54738563" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5031546" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.501634" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.61764705" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.5567823" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.60620916" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22986823" sideWeight="0.6703755" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22474378" sideWeight="0.6703755" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25037822" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5653595" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2489019" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23071104" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24659607" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5252366" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5245098" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1374,6 +1376,7 @@
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39788198" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5653595" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1393,7 +1396,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="46" />
+      <option name="time" value="51" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1402,233 +1405,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/jre/lib/rt.jar!/com/sun/istack/internal/ByteArrayDataSource.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/com/sun/javafx/geom/Point2D.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="25" column="6" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/javafx/scene/control/TableColumn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="135" column="13" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/javafx/beans/property/ReadOnlyObjectWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/javafx/beans/property/ObjectPropertyBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/javafx/scene/control/TableCell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="335" column="26" selection-start-line="335" selection-start-column="26" selection-end-line="335" selection-end-column="26" />
-          <folding>
-            <element signature="e#10619#10629#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/javafx/scene/control/ControlUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="45" column="23" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/javafx/event/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="197" column="22" selection-start-line="197" selection-start-column="22" selection-end-line="197" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/com/sun/javafx/event/EventUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/javafx/event/EventHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/javafx/scene/control/TableView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="339" column="31" selection-start-line="339" selection-start-column="31" selection-end-line="339" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/javafx/scene/control/Cell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="486" column="38" selection-start-line="486" selection-start-column="38" selection-end-line="486" selection-end-column="38" />
-          <folding>
-            <element signature="e#22060#22061#0" expanded="false" />
-            <element signature="e#22122#22123#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/com/sun/javafx/scene/control/skin/TableViewSkin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3249">
-          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/javafx/stage/Stage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7990">
-          <caret line="558" column="22" selection-start-line="558" selection-start-column="22" selection-end-line="558" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bundles/Locale_ru.properties">
-      <provider selected="true" editor-type-id="ResourceBundle">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="584" column="9" selection-start-line="584" selection-start-column="9" selection-end-line="584" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/library/function/FunctionSettings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/library/function/RunnableDoubleFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/library/function/PolynomialFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="71" selection-start-line="9" selection-start-column="71" selection-end-line="9" selection-end-column="71" />
-          <folding>
-            <element signature="e#1446#1447#0" expanded="false" />
-            <element signature="e#1502#1503#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/library/function/LagrangePolynomialScriptFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="15" column="71" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
-          <folding>
-            <element signature="method#LagrangePolynomialScriptFunction#2;class#LagrangePolynomialScriptFunction#0" expanded="false" />
-            <element signature="method#functionRun#0;class#LagrangePolynomialScriptFunction#0" expanded="false" />
-            <element signature="method#initialize#0;class#LagrangePolynomialScriptFunction#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/library/function/LagrangePolynomialFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="71" selection-start-line="11" selection-start-column="71" selection-end-line="11" selection-end-column="71" />
-          <folding>
-            <element signature="method#LagrangePolynomialFunction#2;class#LagrangePolynomialFunction#0" expanded="false" />
-            <element signature="method#initialize#0;class#LagrangePolynomialFunction#0" expanded="false" />
-            <element signature="method#functionRun#0;class#LagrangePolynomialFunction#0" expanded="false" />
-            <element signature="method#toString#0;class#LagrangePolynomialFunction#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="2408" column="0" selection-start-line="2408" selection-start-column="0" selection-end-line="2408" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fxml/choiceMethods/lagrangeFunctionSet.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="251" selection-start-line="9" selection-start-column="251" selection-end-line="9" selection-end-column="251" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fxml/choiceMethods/polynomialFunctionSet.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="7" column="266" selection-start-line="7" selection-start-column="266" selection-end-line="7" selection-end-column="266" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fxml/choiceMethods/stringFunctionSet.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/choiceMethodsControllers/LagrangePolynomialFunctionController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1669,21 +1445,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fxml/settings/settings.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="8" column="261" selection-start-line="8" selection-start-column="215" selection-end-line="8" selection-end-column="261" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/settings/mainLanguage.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1699,25 +1474,25 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fxml/settings/settings.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fxml/graphic.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fxml/graphic.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/javafx/scene/control/Labeled.java">
@@ -1735,7 +1510,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3470">
           <caret line="82" column="11" selection-start-line="82" selection-start-column="11" selection-end-line="82" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1744,8 +1518,8 @@
         <state relative-caret-position="-716">
           <caret line="113" column="26" selection-start-line="113" selection-start-column="26" selection-end-line="113" selection-end-column="26" />
           <folding>
-            <element signature="e#36393#36394#0" expanded="true" />
-            <element signature="e#36459#36460#0" expanded="true" />
+            <element signature="e#36393#36394#0" expanded="false" />
+            <element signature="e#36459#36460#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1754,15 +1528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="865">
           <caret line="398" column="22" selection-start-line="398" selection-start-column="15" selection-end-line="398" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/javafx/scene/paint/Color.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="1678" column="23" selection-start-line="1678" selection-start-column="23" selection-end-line="1678" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1773,29 +1538,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/library/graphic/settings/GraphicSettings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1592">
-          <caret line="106" column="49" selection-start-line="106" selection-start-column="49" selection-end-line="106" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#7930#7931#0" expanded="true" />
-            <element signature="e#7970#7971#0" expanded="true" />
-            <element signature="e#8036#8037#0" expanded="true" />
-            <element signature="e#8094#8095#0" expanded="true" />
-            <element signature="e#8134#8135#0" expanded="true" />
-            <element signature="e#8170#8171#0" expanded="true" />
-            <element signature="e#8228#8229#0" expanded="true" />
-            <element signature="e#8278#8279#0" expanded="true" />
-            <element signature="e#8321#8322#0" expanded="true" />
-            <element signature="e#8360#8361#0" expanded="true" />
-            <element signature="e#8424#8425#0" expanded="true" />
-            <element signature="e#8480#8481#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1804,38 +1546,8 @@
         <state relative-caret-position="119">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/library/function/settings/FunctionSettings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="e#452#453#0" expanded="true" />
-            <element signature="e#505#506#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/library/function/StringFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fxml/choiceMethods/choiceFunctionSet.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1846,36 +1558,376 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/library/util/LocaleInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="744" column="0" selection-start-line="744" selection-start-column="0" selection-end-line="744" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="2599" column="34" selection-start-line="2599" selection-start-column="34" selection-end-line="2599" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fxml/choiceMethods/choiceFunctionSet.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/util/ResourceBundle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="1778" column="30" selection-start-line="1778" selection-start-column="30" selection-end-line="1778" selection-end-column="30" />
+          <folding>
+            <element signature="e#15397#15398#0" expanded="false" />
+            <element signature="e#15443#15444#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fxml/graphicMethods/setEdges.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/javax/xml/bind/JAXBContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8069">
+          <caret line="261" column="22" selection-start-line="261" selection-start-column="22" selection-end-line="261" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/javafx/animation/Interpolatable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/javafx/scene/paint/Color.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="106" column="64" selection-start-line="106" selection-start-column="50" selection-end-line="106" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/com/sun/javafx/font/PrismFontLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="192" column="26" selection-start-line="192" selection-start-column="26" selection-end-line="192" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/com/sun/javafx/tk/FontLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/library/util/FXHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/javax/xml/bind/Marshaller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="425" column="16" selection-start-line="425" selection-start-column="16" selection-end-line="425" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="234" column="18" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
+          <folding>
+            <element signature="e#10065#10066#0" expanded="false" />
+            <element signature="e#10148#10149#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/library/function/LagrangePolynomialScriptFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="109" column="13" selection-start-line="109" selection-start-column="13" selection-end-line="109" selection-end-column="13" />
+          <folding>
+            <element signature="method#LagrangePolynomialScriptFunction#2;class#LagrangePolynomialScriptFunction#0" expanded="false" />
+            <element signature="method#functionRun#0;class#LagrangePolynomialScriptFunction#0" expanded="false" />
+            <element signature="method#initialize#0;class#LagrangePolynomialScriptFunction#0" expanded="false" />
+            <element signature="e#3156#3157#0" expanded="false" />
+            <element signature="e#3180#3181#0" expanded="false" />
+            <element signature="e#3260#3261#0" expanded="false" />
+            <element signature="e#3287#3288#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/library/function/PolynomialFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/library/function/LagrangePolynomialFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+          <folding>
+            <element signature="method#LagrangePolynomialFunction#3;class#LagrangePolynomialFunction#0" expanded="false" />
+            <element signature="method#initialize#0;class#LagrangePolynomialFunction#0" expanded="false" />
+            <element signature="method#functionRun#0;class#LagrangePolynomialFunction#0" expanded="false" />
+            <element signature="e#2474#2475#0" expanded="false" />
+            <element signature="e#2498#2499#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/library/function/RunnableDoubleFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="60" column="4" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/settings/functionsSettings.xml" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/javafx/scene/text/Font.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="211" column="23" selection-start-line="211" selection-start-column="23" selection-end-line="211" selection-end-column="23" />
+          <folding>
+            <element signature="e#8012#8013#0" expanded="false" />
+            <element signature="e#8063#8064#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/settings/graphicSettings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="113" selection-start-line="16" selection-start-column="113" selection-end-line="16" selection-end-column="113" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/library/graphic/settings/WriteFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/settings/GraphicSettingsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="202" column="18" selection-start-line="202" selection-start-column="18" selection-end-line="202" selection-end-column="18" />
+        <state relative-caret-position="-1473">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/library/graphic/settings/WriteGraphicSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="98" column="24" selection-start-line="98" selection-start-column="24" selection-end-line="98" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/library/graphic/settings/GraphicSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="97" column="41" selection-start-line="97" selection-start-column="41" selection-end-line="97" selection-end-column="41" />
           <folding>
-            <element signature="method#initializeSliders#0;class#GraphicSettingsController#0" expanded="false" />
-            <element signature="method#setSliderMajors#0;class#GraphicSettingsController#0" expanded="false" />
-            <element signature="method#initializeBooleans#0;class#GraphicSettingsController#0" expanded="false" />
-            <element signature="method#setCurrentColor#0;class#GraphicSettingsController#0" expanded="false" />
-            <element signature="class#11382:11794" expanded="false" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/library/function/StringFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="188" column="41" selection-start-line="188" selection-start-column="41" selection-end-line="188" selection-end-column="41" />
+          <folding>
+            <element signature="e#6504#6505#0" expanded="false" />
+            <element signature="e#6560#6561#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="707" column="12" selection-start-line="707" selection-start-column="12" selection-end-line="707" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/util/LinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1581">
+          <caret line="116" column="11" selection-start-line="116" selection-start-column="11" selection-end-line="116" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#39347#0" expanded="false" />
+            <element signature="e#8008#8009#0" expanded="false" />
+            <element signature="e#8036#8037#0" expanded="false" />
+            <element signature="e#8248#8249#0" expanded="false" />
+            <element signature="e#8275#8276#0" expanded="false" />
+            <element signature="e#8748#8749#0" expanded="false" />
+            <element signature="e#8787#8788#0" expanded="false" />
+            <element signature="e#8938#8939#0" expanded="false" />
+            <element signature="e#8965#8966#0" expanded="false" />
+            <element signature="e#11209#11210#0" expanded="false" />
+            <element signature="e#11247#11248#0" expanded="false" />
+            <element signature="e#15878#15879#0" expanded="false" />
+            <element signature="e#15927#15928#0" expanded="false" />
+            <element signature="e#16099#16100#0" expanded="false" />
+            <element signature="e#16149#16150#0" expanded="false" />
+            <element signature="e#16416#16417#0" expanded="false" />
+            <element signature="e#16470#16471#0" expanded="false" />
+            <element signature="e#19921#19922#0" expanded="false" />
+            <element signature="e#19954#19955#0" expanded="false" />
+            <element signature="e#20484#20485#0" expanded="false" />
+            <element signature="e#20520#20521#0" expanded="false" />
+            <element signature="e#20770#20771#0" expanded="false" />
+            <element signature="e#20799#20800#0" expanded="false" />
+            <element signature="e#23214#23215#0" expanded="false" />
+            <element signature="e#23241#23242#0" expanded="false" />
+            <element signature="e#23699#23700#0" expanded="false" />
+            <element signature="e#23735#23736#0" expanded="false" />
+            <element signature="e#24161#24162#0" expanded="false" />
+            <element signature="e#24193#24194#0" expanded="false" />
+            <element signature="e#26756#26757#0" expanded="false" />
+            <element signature="e#26803#26804#0" expanded="false" />
+            <element signature="e#27125#27126#0" expanded="false" />
+            <element signature="e#27169#27170#0" expanded="false" />
+            <element signature="e#27499#27500#0" expanded="false" />
+            <element signature="e#27539#27540#0" expanded="false" />
+            <element signature="e#27577#27578#0" expanded="false" />
+            <element signature="e#27621#27622#0" expanded="false" />
+            <element signature="e#29442#29443#0" expanded="false" />
+            <element signature="e#29489#29490#0" expanded="false" />
+            <element signature="e#29728#29729#0" expanded="false" />
+            <element signature="e#29776#29777#0" expanded="false" />
+            <element signature="e#29802#29803#0" expanded="false" />
+            <element signature="e#29847#29848#0" expanded="false" />
+            <element signature="e#29878#29879#0" expanded="false" />
+            <element signature="e#29914#29915#0" expanded="false" />
+            <element signature="e#36042#36043#0" expanded="false" />
+            <element signature="e#36098#36099#0" expanded="false" />
+            <element signature="e#39243#39244#0" expanded="false" />
+            <element signature="e#39336#39337#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/library/function/settings/FunctionSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#684#685#0" expanded="true" />
+            <element signature="e#767#768#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/ChoiceFunctionSetController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+        <state relative-caret-position="431">
+          <caret line="150" column="8" selection-start-line="150" selection-start-column="8" selection-end-line="150" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/library/graphic/settings/WriteFunctionsSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="44" column="58" selection-start-line="44" selection-start-column="58" selection-end-line="44" selection-end-column="58" />
+          <folding>
+            <element signature="e#1427#1428#0" expanded="true" />
+            <element signature="e#1472#1473#0" expanded="true" />
+            <element signature="e#1577#1578#0" expanded="true" />
+            <element signature="method#getFunction#0;class#WriteFunctionsSettings#0" expanded="false" />
+            <element signature="method#write#0;class#WriteFunctionsSettings#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/graphicMethods/SetEdgesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/javafx/scene/control/Alert.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-104">
+          <caret line="221" column="11" selection-start-line="221" selection-start-column="11" selection-end-line="221" selection-end-column="11" />
+          <folding>
+            <element signature="e#8749#8750#0" expanded="false" />
+            <element signature="e#8784#8785#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/javafx/scene/control/Dialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-665">
+          <caret line="323" column="29" selection-start-line="323" selection-start-column="29" selection-end-line="323" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/javafx-src.zip!/javafx/scene/input/KeyCodeCombination.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="85" column="11" selection-start-line="85" selection-start-column="11" selection-end-line="85" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/library/graphic/CanvasGraphic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="83" column="9" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
+        <state relative-caret-position="-716">
+          <caret line="53" column="11" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
           <folding>
             <element signature="method#drawCurrentPositionDots#0;class#CanvasGraphic#0" expanded="false" />
             <element signature="method#drawCurrentMouseCoordinate#0;class#CanvasGraphic#0" expanded="false" />
@@ -1884,37 +1936,18 @@
             <element signature="method#drawCoordinateValues#0;class#CanvasGraphic#0" expanded="false" />
             <element signature="method#drawCoordinateLines#0;class#CanvasGraphic#0" expanded="false" />
             <element signature="method#drawGraphic#0;class#CanvasGraphic#0" expanded="false" />
-            <element signature="method#refreshGraphic#0;class#CanvasGraphic#0" expanded="false" />
-            <element signature="method#calculatePixelFunctionY#0;class#CanvasGraphic#0" expanded="false" />
             <element signature="method#strokeLine#0;class#CanvasGraphic#0" expanded="false" />
             <element signature="method#fillDot#0;class#CanvasGraphic#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/library/util/LocaleInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/library/util/FXHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/GraphicController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2057">
-          <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+        <state relative-caret-position="544">
+          <caret line="180" column="35" selection-start-line="180" selection-start-column="35" selection-end-line="180" selection-end-column="35" />
           <folding>
-            <element signature="e#2370#2445#0" expanded="false" />
-            <element signature="e#3252#3339#0" expanded="false" />
+            <element signature="e#2753#2828#0" expanded="false" />
           </folding>
         </state>
       </provider>

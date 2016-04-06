@@ -38,10 +38,25 @@ public interface RunnableDoubleFunction {
      */
     FunctionSettings getFunctionSettings();
 
+
     /**
      * For change setting of current function
      *
      * @param functionSettings
      */
     void setFunctionSettings(FunctionSettings functionSettings);
+
+
+    /**
+     *
+     * @return
+     */
+    int getType();
+
+    /**
+     *
+     * @param string
+     * @return
+     */
+    RunnableDoubleFunction parseByString(String string);
 }

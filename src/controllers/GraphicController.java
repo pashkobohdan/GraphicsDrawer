@@ -3,26 +3,30 @@ package controllers;
 import controllers.settings.GraphicSettingsController;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCodeCombination;
+import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import library.function.RunnableDoubleFunction;
-import library.function.settings.FunctionSettings;
 import library.graphic.CanvasGraphic;
+import library.graphic.settings.WriteFunctionsSettings;
+import library.graphic.settings.WriteGraphicSettings;
 import library.graphic.settings.GraphicSettings;
 import library.util.FXHelper;
-
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.LinkedList;
 import java.util.ResourceBundle;
 
 public class GraphicController implements Initializable {
@@ -59,17 +63,24 @@ public class GraphicController implements Initializable {
     private GraphicSettingsController graphicSettingsController;
     Stage settingsStage;
 
+    public static final String PROJECT_PATH = System.getProperty("user.dir");
+    public static final String SETTINGS_PATH = PROJECT_PATH + "/src/settings";
+    public static final String SETTING_FILE = SETTINGS_PATH + "/graphicSettings.xml";
+
+    private boolean isOpenedSave;
+    private String openedSavePath;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         resourceBundle = resources;
 
-        labelFunction1.setText(resources.getString("main.label.function1.text"));
-        labelFunction2.setText(resources.getString("main.label.function2.text"));
-
-        buttonSetFunction1.setText(resourceBundle.getString("main.button.setFunction"));
-        buttonSetFunction2.setText(resourceBundle.getString("main.button.setFunction"));
+        setTexts();
 
         Canvas canvas = this.canvas;
+        canvasGraphic = new CanvasGraphic(canvas, anchorPaneWithCanvas, new GraphicSettings(), null, null);
+        initializeWindows();
+        initializeMenu();
+        checkGraphicSettings();
 
 //        StringFunction stringFunction = new StringFunction("x*sin(x)/5");
 //        stringFunction.initialize();
@@ -88,12 +99,6 @@ public class GraphicController implements Initializable {
 //        );
 //        lagrangePolynomialFunction.initialize();
 
-        canvasGraphic = new CanvasGraphic(canvas, anchorPaneWithCanvas, new GraphicSettings());
-        canvasGraphic.initialize();
-
-        initializeWindows();
-
-        initializeMenu();
 //        List<RunnableDoubleFunction> list = new LinkedList<RunnableDoubleFunction>();
 //        list.add(stringFunction);
 //        list.add(polynomialFunction);
@@ -103,10 +108,24 @@ public class GraphicController implements Initializable {
 //            System.out.print(arg+" | ");
 //        }
 //        System.out.println();
+
     }
 
-    private void initializeSettingsWindow(){
+    private void setTexts() {
+        labelFunction1.setText(resourceBundle.getString("main.label.function1.text"));
+        labelFunction2.setText(resourceBundle.getString("main.label.function2.text"));
 
+        buttonSetFunction1.setText(resourceBundle.getString("main.button.setFunction"));
+        buttonSetFunction2.setText(resourceBundle.getString("main.button.setFunction"));
+    }
+
+    private void checkGraphicSettings() {
+        GraphicSettings graphicSettings = WriteGraphicSettings.read(SETTING_FILE);
+        if (graphicSettings != null) {
+            canvasGraphic.setGraphicSettings(graphicSettings);
+        } else {
+            WriteGraphicSettings.write(SETTING_FILE, canvasGraphic.getGraphicSettings());
+        }
     }
 
     private void initializeMenu() {
@@ -121,19 +140,69 @@ public class GraphicController implements Initializable {
         MenuItem fileSaveAs = new MenuItem(resourceBundle.getString("menu.file.saveAs"));
         MenuItem fileNew = new MenuItem(resourceBundle.getString("menu.file.new"));
         MenuItem fileExit = new MenuItem(resourceBundle.getString("menu.file.Exit"));
-        fileOpen.setOnAction((event)->{
 
-        });
-        fileSave.setOnAction((event)->{
+        fileOpen.setAccelerator(new KeyCodeCombination(KeyCode.O, KeyCombination.CONTROL_DOWN));
+        fileSave.setAccelerator(new KeyCodeCombination(KeyCode.S, KeyCombination.CONTROL_DOWN));
+        fileSaveAs.setAccelerator(new KeyCodeCombination(KeyCode.S, KeyCombination.CONTROL_DOWN, KeyCombination.SHIFT_DOWN));
+        fileNew.setAccelerator(new KeyCodeCombination(KeyCode.N, KeyCombination.CONTROL_DOWN));
+        fileExit.setAccelerator(new KeyCodeCombination(KeyCode.E, KeyCombination.CONTROL_DOWN));
 
-        });
-        fileSaveAs.setOnAction((event)->{
+        fileOpen.setOnAction((event) -> {
+            if (isOpenedSave) {
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Title");
+                alert.setHeaderText("Do you want to save current file before open new file ?");
+                alert.setContentText("Save ?");
 
-        });
-        fileNew.setOnAction((event)->{
+                if (alert.showAndWait().get() == ButtonType.OK) {
+                    WriteFunctionsSettings.write(openedSavePath, WriteFunctionsSettings.getByFunctions(
+                            canvasGraphic.getFunctions().get(0),
+                            canvasGraphic.getFunctions().get(1)
+                    ));
 
+                    Alert info = new Alert(Alert.AlertType.INFORMATION,"Current file was saved to "+openedSavePath+" !");
+                    info.setTitle("Title");
+                    info.setHeaderText("Saving");
+                    info.showAndWait();
+                }
+            }
+            openNewFile();
         });
-        fileExit.setOnAction((event)->{
+        fileSave.setOnAction((event) -> {
+            if(isOpenedSave){
+                WriteFunctionsSettings.write(openedSavePath, WriteFunctionsSettings.getByFunctions(
+                        canvasGraphic.getFunctions().get(0),
+                        canvasGraphic.getFunctions().get(1)
+                ));
+
+                Alert info = new Alert(Alert.AlertType.INFORMATION,"Current file was saved to "+openedSavePath+" !");
+                info.setTitle("Title");
+                info.setHeaderText("Saving");
+                info.showAndWait();
+            }
+            else{
+                saveAsFunctions();
+            }
+        });
+        fileSaveAs.setOnAction((event) -> {
+            saveAsFunctions();
+        });
+        fileNew.setOnAction((event) -> {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("XML file(*.xml)", "*.xml"));
+            File createFile = fileChooser.showSaveDialog(labelFunction1.getScene().getWindow());
+
+            if (createFile != null) {
+                WriteFunctionsSettings.write(createFile.getAbsolutePath(), WriteFunctionsSettings.getByFunctions(
+                        canvasGraphic.getFunctions().get(0),
+                        canvasGraphic.getFunctions().get(1)
+                ));
+
+                isOpenedSave = true;
+                openedSavePath = createFile.getAbsolutePath();
+            }
+        });
+        fileExit.setOnAction((event) -> {
             //save
             Platform.exit();
         });
@@ -143,23 +212,27 @@ public class GraphicController implements Initializable {
         MenuItem graphicRedraw = new MenuItem(resourceBundle.getString("menu.graphic.redraw"));
         MenuItem graphicSettings = new MenuItem(resourceBundle.getString("menu.graphic.settings"));
         MenuItem graphicSetEdges = new MenuItem(resourceBundle.getString("menu.graphic.setEdges"));
-        graphicRedraw.setOnAction((event)->{
+        graphicRedraw.setOnAction((event) -> {
             canvasGraphic.refreshGraphic();
         });
-        graphicSettings.setOnAction((event)->{
+        graphicSettings.setOnAction((event) -> {
             if (settingsStage == null) {
                 settingsStage = FXHelper.initializeStage("", 400, 550, false, parentSettings, Modality.WINDOW_MODAL, labelFunction1.getScene().getWindow());
             }
+            graphicSettingsController.setGraphicSettings(canvasGraphic.getGraphicSettings());
             settingsStage.showAndWait();
+            canvasGraphic.refreshGraphic();
+
+            WriteGraphicSettings.write(GraphicController.SETTING_FILE, canvasGraphic.getGraphicSettings());
         });
-        graphicSetEdges.setOnAction((event)->{
+        graphicSetEdges.setOnAction((event) -> {
 
         });
         graphic.getItems().addAll(graphicRedraw, graphicSettings, graphicSetEdges);
 
         // equation
         MenuItem equationSearchRoots = new MenuItem(resourceBundle.getString("menu.equation.searchRoots"));
-        equationSearchRoots.setOnAction((event)->{
+        equationSearchRoots.setOnAction((event) -> {
 
         });
         equation.getItems().addAll(equationSearchRoots);
@@ -167,16 +240,68 @@ public class GraphicController implements Initializable {
         // help
         MenuItem helpAbout = new MenuItem(resourceBundle.getString("menu.help.about"));
         MenuItem helpHelp = new MenuItem(resourceBundle.getString("menu.help.help"));
-        helpAbout.setOnAction((event)->{
+        helpAbout.setOnAction((event) -> {
 
         });
-        helpHelp.setOnAction((event)->{
+        helpHelp.setOnAction((event) -> {
 
         });
         help.getItems().addAll(helpAbout, helpHelp);
 
 
         menuBar.getMenus().addAll(file, graphic, equation, help);
+
+    }
+
+    private void saveAsFunctions() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("XML file(*.xml)", "*.xml"));
+        File file1 = fileChooser.showSaveDialog(labelFunction1.getScene().getWindow());
+
+        if (file1 != null) {
+            WriteFunctionsSettings.write(file1.getAbsolutePath(), WriteFunctionsSettings.getByFunctions(
+                    canvasGraphic.getFunctions().get(0),
+                    canvasGraphic.getFunctions().get(1)
+            ));
+        }
+    }
+
+    private void openNewFile() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("XML file(*.xml)", "*.xml"));
+        File readFile = fileChooser.showOpenDialog(labelFunction1.getScene().getWindow());
+
+        if (readFile != null) {
+            isOpenedSave = true;
+            openedSavePath = readFile.getAbsolutePath();
+
+            WriteFunctionsSettings fs = WriteFunctionsSettings.read(readFile.getAbsolutePath());
+
+            reSetFunctions(fs.getRunnableFunctionF(), fs.getRunnableFunctionG());
+
+            isOpenedSave = true;
+            openedSavePath = readFile.getAbsolutePath();
+        }
+    }
+
+    private void reSetFunctions(RunnableDoubleFunction functionF, RunnableDoubleFunction functionG){
+        if(functionF!=null) {
+            functionF.initialize();
+            labelFunction1.setTextFill(functionF.getFunctionSettings().getGraphicColor());
+        }
+        if(functionG!=null) {
+            functionG.initialize();
+            labelFunction2.setTextFill(functionG.getFunctionSettings().getGraphicColor());
+        }
+
+        canvasGraphic.setFunctions(new LinkedList<>());
+        canvasGraphic.addFunction(functionF);
+        canvasGraphic.addFunction(functionG);
+
+        if (!canvasGraphic.isInitialised()) {
+            canvasGraphic.initialize();
+        }
+        canvasGraphic.refreshGraphic();
     }
 
     private void initializeWindows() {
@@ -211,20 +336,11 @@ public class GraphicController implements Initializable {
         if (choiceFunctionFXStage == null) {
             choiceFunctionFXStage = FXHelper.initializeStage("", 250, 300, false, parentSetFX, Modality.WINDOW_MODAL, labelFunction1.getScene().getWindow());
         }
+        choiceFunctionSetFXController.setRunnableDoubleFunction(canvasGraphic.getFunctions().get(0));
         choiceFunctionFXStage.showAndWait();
 
         if (choiceFunctionSetFXController.getRunnableDoubleFunction() != null) {
-
-            if (canvasGraphic.getFunctions() != null && canvasGraphic.getFunctions().get(0) != null) {
-                canvasGraphic.getFunctions().remove(0);
-            }
-            functionFX = choiceFunctionSetFXController.getRunnableDoubleFunction();
-            canvasGraphic.addFunction(0, functionFX);
-
-            if (!canvasGraphic.isInitialised()) {
-                canvasGraphic.initialize();
-            }
-            canvasGraphic.refreshGraphic();
+            reSetFunctions(choiceFunctionSetFXController.getRunnableDoubleFunction(), canvasGraphic.getFunctions().get(1));
         }
     }
 
@@ -232,22 +348,11 @@ public class GraphicController implements Initializable {
         if (choiceFunctionGXStage == null) {
             choiceFunctionGXStage = FXHelper.initializeStage("", 250, 300, false, parentSetGX, Modality.WINDOW_MODAL, labelFunction1.getScene().getWindow());
         }
+        choiceFunctionSetGXController.setRunnableDoubleFunction(canvasGraphic.getFunctions().get(1));
         choiceFunctionGXStage.showAndWait();
 
         if (choiceFunctionSetGXController.getRunnableDoubleFunction() != null) {
-            if (canvasGraphic.getFunctions() != null && canvasGraphic.getFunctions().size() > 1 && canvasGraphic.getFunctions().get(1) != null) {
-                canvasGraphic.getFunctions().remove(1);
-            }
-            else{
-                canvasGraphic.addFunction(null);
-            }
-            functionGX = choiceFunctionSetGXController.getRunnableDoubleFunction();
-            canvasGraphic.addFunction(1, functionGX);
-
-            if (!canvasGraphic.isInitialised()) {
-                canvasGraphic.initialize();
-            }
-            canvasGraphic.refreshGraphic();
+            reSetFunctions( canvasGraphic.getFunctions().get(0), choiceFunctionSetGXController.getRunnableDoubleFunction());
         }
     }
 }

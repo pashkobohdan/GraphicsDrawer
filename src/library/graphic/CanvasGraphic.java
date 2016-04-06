@@ -45,9 +45,8 @@ public class CanvasGraphic {
     public CanvasGraphic(@NotNull Canvas canvas, @NotNull Region regionWithCanvas, GraphicSettings graphicSettings, @NotNull List<RunnableDoubleFunction> functions) {
         this.canvas = canvas;
         this.regionWithCanvas = regionWithCanvas;
-        this.functions = functions;
+        this.setFunctions(functions);
         this.setGraphicSettings(graphicSettings);
-        graphicSettings.setCanvasGraphic(this);
 
         graphicsContext = canvas.getGraphicsContext2D();
     }
@@ -55,9 +54,8 @@ public class CanvasGraphic {
     public CanvasGraphic(@NotNull Canvas canvas, @NotNull Region regionWithCanvas, GraphicSettings graphicSettings, @NotNull RunnableDoubleFunction... functions) {
         this.canvas = canvas;
         this.regionWithCanvas = regionWithCanvas;
-        this.functions = Arrays.asList(functions);
+        this.setFunctions(Arrays.asList(functions));
         this.setGraphicSettings(graphicSettings);
-        graphicSettings.setCanvasGraphic(this);
 
         graphicsContext = canvas.getGraphicsContext2D();
     }
@@ -66,42 +64,60 @@ public class CanvasGraphic {
         this.canvas = canvas;
         this.regionWithCanvas = regionWithCanvas;
         this.setGraphicSettings(graphicSettings);
-        graphicSettings.setCanvasGraphic(this);
 
         graphicsContext = canvas.getGraphicsContext2D();
     }
 
     public void addFunction(RunnableDoubleFunction function) {
         if (functions == null) {
-            functions = new LinkedList<>();
+            setFunctions(new LinkedList<>());
         }
         functions.add(function);
     }
 
     public void addFunction(int index, RunnableDoubleFunction function) {
         if (getFunctions() == null) {
-            functions = new LinkedList<>();
+            setFunctions(new LinkedList<>());
         }
-        getFunctions().add(index, function);
+        if (index < functions.size()) {
+            getFunctions().add(index, function);
+        } else {
+            getFunctions().add(function);
+        }
     }
 
-    public void removeFunction(RunnableDoubleFunction function) {
-        if (getFunctions() != null) {
-            try {
-                functions.remove(function);
-            } catch (Exception e) {
-
+    public void removeFunction(int index) {
+        if (functions != null && index < functions.size()) {
+            List<RunnableDoubleFunction> list = new LinkedList<>();
+            for (int i = 0; i < functions.size(); i++) {
+                if (i == index) {
+                    continue;
+                }
+                list.add(functions.get(i));
             }
+            functions = list;
         }
     }
 
     public void initialize() {
-        if (getFunctions() != null && getFunctions().size() != 0) {
+        if (isFunctionsCompetent()) {
             isInitialised = true;
             initValues();
             initCanvasResize();
             initMouse();
         }
+    }
+
+    private boolean isFunctionsCompetent() {
+        if (functions == null || functions.size() == 0) {
+            return false;
+        }
+        for (RunnableDoubleFunction f : functions) {
+            if (f != null) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void initValues() {
@@ -340,7 +356,7 @@ public class CanvasGraphic {
     }
 
     public void refreshGraphic() {
-        if(!isInitialised){
+        if (!isInitialised) {
             return;
         }
         if (getGraphicSettings().isClearBeforeDrawing()) {
@@ -434,5 +450,9 @@ public class CanvasGraphic {
 
     public void setGraphicSettings(GraphicSettings graphicSettings) {
         this.graphicSettings = graphicSettings;
+    }
+
+    public void setFunctions(List<RunnableDoubleFunction> functions) {
+        this.functions = functions;
     }
 }

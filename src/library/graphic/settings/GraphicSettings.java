@@ -4,11 +4,14 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import library.graphic.CanvasGraphic;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Settings of graphic with some functions
  *
  * Created by Bohdan Pashko on 02.04.2016.
  */
+@XmlRootElement
 public class GraphicSettings {
 
     private boolean clearBeforeDrawing;
@@ -33,8 +36,6 @@ public class GraphicSettings {
     private double minOneLineSegment;
     private double zoomSensivity;
     private double runAwaySensivity;
-
-    private CanvasGraphic canvasGraphic;
 
     /**
      * Default constructor (in my opinion - best of the best)
@@ -233,14 +234,6 @@ public class GraphicSettings {
 
     public void setClearColor(Color clearColor) {
         this.clearColor = clearColor;
-    }
-
-    public CanvasGraphic getCanvasGraphic() {
-        return canvasGraphic;
-    }
-
-    public void setCanvasGraphic(CanvasGraphic canvasGraphic) {
-        this.canvasGraphic = canvasGraphic;
     }
 
     public double getMinOneLineSegment() {

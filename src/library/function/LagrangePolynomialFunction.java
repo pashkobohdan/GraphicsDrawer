@@ -14,6 +14,9 @@ public class LagrangePolynomialFunction implements RunnableDoubleFunction {
     private List<Point2D> dots;
     private List<Double> coefficients;
 
+    public LagrangePolynomialFunction() {
+
+    }
 
     public LagrangePolynomialFunction(Point2D... dots) {
         this.dots = Arrays.asList(dots);
@@ -78,7 +81,7 @@ public class LagrangePolynomialFunction implements RunnableDoubleFunction {
     public String toString() {
         String result = "";
         for (Point2D point2D : dots) {
-            result += "x:" + point2D.getX() + "  y:" + point2D.getY();
+            result += point2D.getX() + ":" + point2D.getY() + " ";
         }
         return result;
     }
@@ -86,6 +89,25 @@ public class LagrangePolynomialFunction implements RunnableDoubleFunction {
     @Override
     public void setFunctionSettings(FunctionSettings functionSettings) {
         this.functionSettings = functionSettings;
+    }
+
+    @Override
+    public int getType() {
+        return 2;
+    }
+
+    @Override
+    public RunnableDoubleFunction parseByString(String string) {
+        List<Point2D> coefficients = new LinkedList<>();
+        String[] values;
+        for (String coeff : string.split(" ")) {
+            if (coeff.equals(" ")) {
+                break;
+            }
+            values = coeff.split(":");
+            coefficients.add(new Point2D(Double.parseDouble(values[0]), Double.parseDouble(values[1])));
+        }
+        return new LagrangePolynomialFunction(coefficients);
     }
 
     @Override
