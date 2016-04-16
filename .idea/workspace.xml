@@ -7,41 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/graphicMethods/SolveEquationController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/settings/MainSettingsController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fxml/graphicMethods/solveEquation.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fxml/settings/mainSettings.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/library/util/ReadWrite.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/solver/EqualTwoFunction.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/library/solver/EqualTwoFunction.java" afterPath="$PROJECT_DIR$/src/library/solver/EqualTwoDoubleFunction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/controllers/GraphicController.class" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/controllers/GraphicController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/controllers/choiceMethodsControllers/LagrangePolynomialFunctionController$EditingCell.class" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/controllers/choiceMethodsControllers/LagrangePolynomialFunctionController$EditingCell.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/controllers/choiceMethodsControllers/PolynomialFunctionController.class" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/controllers/choiceMethodsControllers/PolynomialFunctionController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/controllers/graphicMethods/SetEdgesController.class" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/controllers/graphicMethods/SetEdgesController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/graphic/CanvasGraphic.class" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/graphic/CanvasGraphic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/solver/SolverForTwoFunctions.class" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/solver/SolverForTwoFunctions.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/util/FXHelper.class" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/util/FXHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/util/LocaleInfo.class" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/library/util/LocaleInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/main/Main.class" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/main/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/bundles/Locale_en.properties" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/bundles/Locale_en.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/bundles/Locale_ru.properties" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/bundles/Locale_ru.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/bundles/Locale_uk.properties" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/bundles/Locale_uk.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/fxml/graphicMethods/setEdges.fxml" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/fxml/graphicMethods/setEdges.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/settings/graphicSettings.xml" afterPath="$PROJECT_DIR$/out/production/Course_Project_Graphic_2016/settings/graphicSettings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bundles/Locale_en.properties" afterPath="$PROJECT_DIR$/src/bundles/Locale_en.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bundles/Locale_ru.properties" afterPath="$PROJECT_DIR$/src/bundles/Locale_ru.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bundles/Locale_uk.properties" afterPath="$PROJECT_DIR$/src/bundles/Locale_uk.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/GraphicController.java" afterPath="$PROJECT_DIR$/src/controllers/GraphicController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/graphicMethods/SetEdgesController.java" afterPath="$PROJECT_DIR$/src/controllers/graphicMethods/SetEdgesController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/settings/GraphicSettingsController.java" afterPath="$PROJECT_DIR$/src/controllers/settings/GraphicSettingsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fxml/graphicMethods/setEdges.fxml" afterPath="$PROJECT_DIR$/src/fxml/graphicMethods/setEdges.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/library/graphic/CanvasGraphic.java" afterPath="$PROJECT_DIR$/src/library/graphic/CanvasGraphic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/library/solver/SolverForTwoFunctions.java" afterPath="$PROJECT_DIR$/src/library/solver/SolverForTwoFunctions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/library/util/FXHelper.java" afterPath="$PROJECT_DIR$/src/library/util/FXHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/library/util/LocaleInfo.java" afterPath="$PROJECT_DIR$/src/library/util/LocaleInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Main.java" afterPath="$PROJECT_DIR$/src/main/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/settings/graphicSettings.xml" afterPath="$PROJECT_DIR$/src/settings/graphicSettings.xml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -173,9 +139,10 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="59" column="44" selection-start-line="59" selection-start-column="44" selection-end-line="59" selection-end-column="44" />
+            <state relative-caret-position="323">
+              <caret line="62" column="1" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
               <folding>
+                <element signature="e#1632#1633#0" expanded="true" />
                 <element signature="e#1660#1661#0" expanded="true" />
               </folding>
             </state>
@@ -1375,7 +1342,7 @@
       <workItem from="1460554502926" duration="747000" />
       <workItem from="1460556181501" duration="6309000" />
       <workItem from="1460713386731" duration="3313000" />
-      <workItem from="1460819182037" duration="62000" />
+      <workItem from="1460819182037" duration="336000" />
     </task>
     <servers />
   </component>
@@ -1391,7 +1358,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="321976000" />
+    <option name="totallyTimeSpent" value="322250000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1762,9 +1729,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="59" column="44" selection-start-line="59" selection-start-column="44" selection-end-line="59" selection-end-column="44" />
+        <state relative-caret-position="323">
+          <caret line="62" column="1" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
           <folding>
+            <element signature="e#1632#1633#0" expanded="true" />
             <element signature="e#1660#1661#0" expanded="true" />
           </folding>
         </state>
