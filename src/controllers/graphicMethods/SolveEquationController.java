@@ -11,49 +11,54 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
- * Created by Bohdan Pashko on 04.04.2016.
+ * Created by Bohdan Pashko on 08.04.2016.
  */
-public class SetEdgesController implements Initializable {
-    @FXML
-    public Label labelHeader, labelXTo, labelYFrom, labelYTo, labelXFrom;
+public class SolveEquationController implements Initializable {
 
     @FXML
-    public TextField textFieldYFrom, textFieldYTo, textFieldXTo, textFieldXFrom;
+    public Label labelTitle, labelXFrom, labelXTo, labelStep, labelAccuracy;
+
+    @FXML
+    public TextField textFieldXFrom, textFieldXTo, textFieldStep, textFieldAccuracy;
 
     @FXML
     public Button buttonOk, buttonCancel;
 
-
     private Double xFrom;
     private Double xTo;
-    private Double yFrom;
-    private Double yTo;
+    private Double step;
+    private Double accuracy;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        // text
+
+
+        textFieldStep.setText("0.1");
+        textFieldAccuracy.setText("0.001");
     }
 
     public void action_buttonOk(ActionEvent event) {
         xFrom = Double.parseDouble(textFieldXFrom.getText());
         xTo = Double.parseDouble(textFieldXTo.getText());
-        yFrom = Double.parseDouble(textFieldYFrom.getText());
-        yTo = Double.parseDouble(textFieldYTo.getText());
+        step = Double.parseDouble(textFieldStep.getText());
+        accuracy = Double.parseDouble(textFieldAccuracy.getText());
 
-        labelHeader.getScene().getWindow().hide();
+        labelAccuracy.getScene().getWindow().hide();
     }
 
     public void action_buttonCancel(ActionEvent event) {
         xFrom = null;
         xTo = null;
-        yFrom = null;
-        yTo = null;
+        step = null;
+        accuracy = null;
 
-        labelHeader.getScene().getWindow().hide();
+        labelAccuracy.getScene().getWindow().hide();
     }
 
-    public boolean isCoordinatePresent() {
-        return xFrom != null && xTo != null && yFrom != null && yTo != null;
+    public boolean isValuesPresent() {
+        return xFrom != null && xTo != null && step != null && accuracy != null;
     }
 
     public Double getXFrom() {
@@ -72,19 +77,19 @@ public class SetEdgesController implements Initializable {
         this.xTo = xTo;
     }
 
-    public Double getYFrom() {
-        return yFrom;
+    public Double getStep() {
+        return step;
     }
 
-    public void setYFrom(Double yFrom) {
-        this.yFrom = yFrom;
+    public void setStep(Double step) {
+        this.step = step;
     }
 
-    public Double getYTo() {
-        return yTo;
+    public Double getAccuracy() {
+        return accuracy;
     }
 
-    public void setYTo(Double yTo) {
-        this.yTo = yTo;
+    public void setAccuracy(Double accuracy) {
+        this.accuracy = accuracy;
     }
 }

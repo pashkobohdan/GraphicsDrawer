@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="170.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.graphicMethods.SolveEquationController">
+   <children>
+      <AnchorPane prefHeight="30.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="labelTitle" alignment="CENTER" layoutX="186.0" layoutY="6.0" text="title" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="30.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="labelXFrom" layoutY="6.0" text="x from" AnchorPane.bottomAnchor="7.0" />
+            <TextField fx:id="textFieldXFrom" layoutX="58.0" layoutY="2.0" prefWidth="100.0" AnchorPane.bottomAnchor="3.0" />
+            <Label fx:id="labelXTo" layoutX="225.0" layoutY="6.0" text="x to" AnchorPane.bottomAnchor="7.0" />
+            <TextField fx:id="textFieldXTo" layoutX="290.0" layoutY="4.0" prefWidth="100.0" AnchorPane.bottomAnchor="3.0" />
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </AnchorPane>
+      <AnchorPane prefHeight="30.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="labelStep" layoutY="8.0" text="step" AnchorPane.bottomAnchor="7.0" />
+            <TextField fx:id="textFieldStep" layoutX="58.0" layoutY="2.0" prefWidth="100.0" AnchorPane.bottomAnchor="3.0" />
+            <Label fx:id="labelAccuracy" layoutX="205.0" layoutY="6.0" text="accuracy" AnchorPane.bottomAnchor="7.0" />
+            <TextField fx:id="textFieldAccuracy" layoutX="290.0" layoutY="4.0" prefWidth="100.0" AnchorPane.bottomAnchor="3.0" />
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </AnchorPane>
+      <AnchorPane prefHeight="30.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="buttonOk" defaultButton="true" layoutX="212.0" layoutY="3.0" mnemonicParsing="false" onAction="#action_buttonOk" prefWidth="90.0" text="ok" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="95.0" />
+            <Button fx:id="buttonCancel" cancelButton="true" layoutX="82.0" layoutY="4.0" mnemonicParsing="false" onAction="#action_buttonCancel" prefWidth="90.0" text="cancel" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="90.0" />
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </AnchorPane>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</VBox>

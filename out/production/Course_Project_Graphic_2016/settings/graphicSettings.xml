@@ -6,13 +6,13 @@
     <coordinateLinesColor>0x000000ff</coordinateLinesColor>
     <coordinateValuesColor>0x000000ff</coordinateValuesColor>
     <coordinateValuesFont>Font[name=System Regular, family=System, style=Regular, size=12.0]</coordinateValuesFont>
-    <dotsOnFunctionsColor>0x800080ff</dotsOnFunctionsColor>
+    <dotsOnFunctionsColor>0xa52a2aff</dotsOnFunctionsColor>
     <drawCoordinateGrid>true</drawCoordinateGrid>
     <drawCurrentFunctionCoordinates>true</drawCurrentFunctionCoordinates>
     <drawCurrentMouseCoordinate>false</drawCurrentMouseCoordinate>
     <edgesColor>0xff0000ff</edgesColor>
     <enterMouseDots>false</enterMouseDots>
-    <minOneLineSegment>62.22222222222222</minOneLineSegment>
+    <minOneLineSegment>64.44444444444444</minOneLineSegment>
     <mouseCoordinateColor>0x000000ff</mouseCoordinateColor>
     <mouseCoordinateFont>Font[name=System Regular, family=System, style=Regular, size=12.0]</mouseCoordinateFont>
     <mouseDotsColor>0x008000ff</mouseDotsColor>

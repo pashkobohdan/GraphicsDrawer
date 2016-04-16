@@ -1,11 +1,12 @@
 package library.solver;
 
+import javafx.geometry.Point2D;
 import library.function.RunnableDoubleFunction;
 
 import java.util.List;
 
 /**
- *
+ * Solve two function (f(x) = g(x)), what set like RunnableDoubleFunction (implemented class)
  */
 public interface SolverForTwoFunctions {
 
@@ -20,5 +21,5 @@ public interface SolverForTwoFunctions {
      * @param accuracy
      * @return
      */
-    List<Double> solve(RunnableDoubleFunction firstFunction, RunnableDoubleFunction secondFunction, Double from, Double to, Double searchStep, Double accuracy);
+    List<Point2D> solve(RunnableDoubleFunction firstFunction, RunnableDoubleFunction secondFunction, Double from, Double to, Double searchStep, Double accuracy);
 }
